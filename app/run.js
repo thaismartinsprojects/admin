@@ -11,4 +11,5 @@ angular.module('adminThaisMartins')
     };
 
     $rootScope.openModal = false;
+    $rootScope.isLogged = false;
 }]);
