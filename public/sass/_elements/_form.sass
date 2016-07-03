@@ -19,16 +19,12 @@
 
     label
       position: absolute
-      color: $color-soft
+      color: $color-secondary
       font:
         weight: 600
-        size: 1.1em
-      left: 10px
+      left: 20px
+      top: 12px
       text-transform: uppercase
-
-      @media #{$xsmall-max}
-        font:
-          size: 1em !important
 
     &.active
       label
@@ -36,12 +32,10 @@
         top: -20px
         font:
           size: .9em
-        color: $color-special
+        color: $color-primary
 
       input,
       textarea,
       select
-        opacity: 1
         border:
-          bottom:
-            color: $color-special
+          color: $color-secondary-soft

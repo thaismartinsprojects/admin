@@ -24,7 +24,18 @@ angular.module('adminThaisMartins', [
                     controller: 'LoginController'
                 }
             }
+        })
+        .state('dashboard', {
+            url: "/dashboard",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/dashboard/index.html',
+                    controller: 'DashboardController'
+                }
+            }
         });
+
 
     // $locationProvider.html5Mode(true);
 }]);

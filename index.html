@@ -30,9 +30,11 @@
         <p>Você está usando um navegador <strong>desatualizado</strong>. Por favor, <a href="http://browsehappy.com/">atualize-o</a> para ter uma melhor experiência.</p>
     <![endif]-->
 
-    <div ui-view="header"></div>
-    <div class="container-fluid" ui-view="main" ng-class="{'modal-open': openModal}"></div>
-    <div ui-view="footer"></div>
+    <div class="container-fluid">
+        <main ui-view="main" class="content" ng-class="{'modal-open': openModal}"></main>
+        <div ui-view="header"></div>
+        <div ui-view="menu"></div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
