@@ -1,0 +1,128 @@
+header
+  height: $height-header
+  position: fixed !important
+  padding: 0 !important
+  margin: 0 !important
+  z-index: 9997
+  color: $color-soft
+  background:
+    color: $color-primary
+
+  @media #{$xsmall-max}
+    height: 50px
+
+  .logo
+    padding: 0
+    position: relative
+
+    img
+      position: absolute
+      max-width: 35px
+      left: 40px
+      top: 18px
+
+    .title
+      float: left
+      color: $color-secondary
+      letter-spacing: -1px
+      padding: 10px 15px 10px 85px
+      margin:
+        top: 15px
+      font:
+        size: 1.5em
+
+
+      @media #{$xsmall-max}
+        padding:
+          left: 15px
+        margin:
+          top: 4px
+
+      b,
+      strong
+        font-weight: 900
+
+      .dot
+        margin: 0
+
+  nav
+    color: $color-secondary
+
+    p
+      float: right
+      text-transform: uppercase
+      font:
+        weight: 800
+        size: 0.8em
+
+      &.back
+        display: none
+
+      &.menu,
+      &.back
+        margin:
+          top: 30px
+          right: 10px
+
+      &.menu
+        @media #{$xsmall-max}
+          margin:
+            top: 17px
+
+    ul
+      float: right
+      cursor: pointer
+      margin:
+        top: 20px
+        right: 10px
+
+      @media #{$xsmall-max}
+        margin:
+          top: 10px
+
+      li
+        background:
+          color: $color-secondary
+        height: 2px
+        width: 30px
+        margin: 6px 0
+
+
+  &.active
+    nav
+      p
+        &.back
+          display: block
+
+          @media #{$xsmall-max}
+            margin:
+              top: 17px
+
+        &.menu
+          display: none
+
+      ul
+        margin:
+          top: 25px
+
+        @media #{$xsmall-max}
+          margin:
+            top: 13px
+
+        li
+          &:first-child
+            @include transition(all .2s)
+            @include rotate(20)
+            width: 15px
+            margin:
+              left: 15px
+              bottom: -5px
+
+          &:last-child
+            @include transition(all .2s)
+            @include rotate(-20)
+            width: 15px
+            margin:
+              left: 15px
+              top: -5px
+

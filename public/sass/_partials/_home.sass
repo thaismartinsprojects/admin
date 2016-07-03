@@ -1,0 +1,32 @@
+#main
+  padding: 0
+  height: 100%
+  min-height: 650px
+  display: inline-table
+  background:
+    color: $color-secondary
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  -o-background-size: cover
+  color: $color-soft
+
+  h1
+    @extend %h1
+
+    @media #{$xsmall-max}
+      text:
+        align: center
+
+    b,
+    strong
+      font-weight: 800
+
+  .line
+    @media #{$xsmall-max}
+      margin:
+        left: auto
+        right: auto
+  p
+    @media #{$xsmall-max}
+      text:
+        align: center

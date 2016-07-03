@@ -1,0 +1,32 @@
+{
+  "name": "admin-thaismartins",
+  "version": "1.0.0",
+  "description": "Website Thais Martins",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thaismartinsprojects/admin"
+  },
+  "keywords": [
+    "admin",
+    "painel de controle"
+  ],
+  "author": "Thais Martins <contato@thaismartins.co>",
+  "license": "ISC",
+  "homepage": "https://thaismartins.co",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^3.0.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp.spritesmith": "^6.2.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "jshint": "^2.9.2"
+  }
+}

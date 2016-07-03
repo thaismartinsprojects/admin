@@ -1,0 +1,141 @@
+@mixin box-shadow($top, $left, $spreat, $blur, $color, $inset: false)
+  @if $inset
+    -webkit-box-shadow: inset $top $left $spreat $blur $color
+    -moz-box-shadow: inset $top $left $spreat $blur $color
+    box-shadow: inset $top $left $spreat $blur $color
+  @else
+    -webkit-box-shadow: $top $left $spreat $blur $color
+    -moz-box-shadow: $top $left $spreat $blur $color
+    box-shadow: $top $left $spreat $blur $color
+
+@mixin rounded($radius: 0.5em)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  border-radius: $radius
+
+@mixin transparency($percentage)
+  -moz-opacity: $percentage
+  -khtml-opacity: $percentage
+  opacity: $percentage
+
+@mixin background-gradient($firstColor, $secondColor, $startPosition, $endPosition)
+  background: $firstColor
+  background: -moz-linear-gradient(top, $firstColor $startPosition, $secondColor $endPosition)
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($startPosition,$firstColor), color-stop($endPosition,$secondColor))
+  background: -webkit-linear-gradient(top, $firstColor $startPosition,$secondColor $endPosition)
+  background: -o-linear-gradient(top, $firstColor $startPosition,$secondColor $endPosition)
+  background: -ms-linear-gradient(top, $firstColor $startPosition,$secondColor $endPosition)
+  background: linear-gradient(top bottom, $firstColor $startPosition,$secondColor $endPosition)
+
+@mixin rotate($deg)
+  -ms-transform: rotate(#{$deg}deg)
+  -webkit-transform: rotate(#{$deg}deg)
+  -moz-transform: rotate(#{$deg}deg)
+  -o-transform: rotate(#{$deg}deg)
+  transform: rotate(#{$deg}deg)
+
+@mixin blur($intensity)
+  -webkit-filter: blur($intensity)
+  -moz-filter: blur($intensity)
+  filter: blur($intensity)
+
+@mixin scale3d($scaleX, $scaleY, $scaleZ)
+  -ms-transform: scale3d($scaleX, $scaleY, $scaleZ)
+  -webkit-transform: scale3d($scaleX, $scaleY, $scaleZ)
+  -moz-transform: scale3d($scaleX, $scaleY, $scaleZ)
+  -o-transform: scale3d($scaleX, $scaleY, $scaleZ)
+  transform: scale3d($scaleX, $scaleY, $scaleZ)
+
+@mixin skewX($deg)
+  -ms-transform: skewX($deg)
+  -webkit-transform: skewX($deg)
+  -moz-transform: skewX($deg)
+  -o-transform: skewX($deg)
+  transform: skewX($deg)
+
+@mixin skewY($deg)
+  -ms-transform: skewY($deg)
+  -webkit-transform: skewY($deg)
+  -moz-transform: skewY($deg)
+  -o-transform: skewY($deg)
+  transform: skewY($deg)
+
+@mixin transition($valueOne, $valueTwo: false)
+  @if $valueTwo
+    -o-transition: $valueOne, $valueTwo
+    -webkit-transition: $valueOne, $valueTwo
+    -moz-transition: $valueOne, $valueTwo
+    transition: $valueOne, $valueTwo
+  @else
+  -o-transition: $valueOne
+  -webkit-transition: $valueOne
+  -moz-transition: $valueOne
+  transition: $valueOne
+
+@mixin create-button-fill($color, $color-font)
+  @include rounded(30px)
+  width: 250px
+  height: 50px
+  border: none
+  position: relative
+  background:
+    color: transparent
+
+  span,
+  i
+    @include transition(color .3s)
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    margin: auto
+    z-index: 2
+    color: $color-font
+    vertical-align: middle
+    display: inline-table
+    text:
+      transform: uppercase
+      align: center
+    width: 100%
+
+  span
+    font:
+      weight: 600
+      size: .9em
+
+  i
+    font:
+      size: 1.2em
+
+  &::before
+    @include rounded(30px)
+    @include box-shadow(0, 0, 0, 135px, $color, true)
+    @include scale3d(0.9, 0.9, 1)
+    @include transition(box-shadow .2s, transform .2s)
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+  &:hover,
+  &:active,
+  &:active:hover,
+  &:active:focus,
+  &:visited:hover
+    span,
+    i
+      color: $color
+
+    &::before
+      @include scale3d(1, 1, 1)
+      @include box-shadow(0, 0, 0, 1px, $color, true)
+      @include transition(box-shadow .15s, transform .2s)
+
+@mixin animation($animate)
+  -webkit-animation: $animate
+  -moz-animation: $animate
+  -o-animation: $animate
+  animation: $animate

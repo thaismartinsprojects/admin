@@ -1,0 +1,10 @@
+<aside id="menu" class="col-xs-4">
+    <ul>
+        <li ng-repeat="item in menu" data-menuanchor="{{item.slug}}">
+            <a href="#{{item.slug}}" ng-click="toogleMenu()">
+                {{item.name}}
+            </a>
+            <span></span>
+        </li>
+    </ul>
+</aside>
