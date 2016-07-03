@@ -1,8 +1,19 @@
 <aside id="menu" class="col-xs-4">
+    <div class="user">
+        <div class="image">
+            <img src="public/images/user.jpg" alt="Usuário" title="Usuário">
+        </div>
+        <div class="ref">
+            <p class="name">Thais Martins</p>
+            <p class="category">administrador</p>
+            <p class="status"> <span class="online"></span>Online</p>
+        </div>
+    </div>
+    <p class="navegation">Navegação</p>
     <ul>
         <li ng-repeat="item in menu" data-menuanchor="{{item.slug}}">
-            <a href="#{{item.slug}}" ng-click="toogleMenu()">
-                {{item.name}}
+            <a ui-sref="{{item.slug}}" ng-click="toogleMenu()">
+                <span class="fa fa-{{item.icon}}"></span> {{item.name}}
             </a>
             <span></span>
         </li>

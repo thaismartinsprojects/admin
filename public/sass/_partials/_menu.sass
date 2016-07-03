@@ -1,0 +1,100 @@
+#menu
+  height: 100%
+  width: 200px
+  background:
+    color: $color-gray
+  position: absolute
+  top: 0
+  left: 0
+  padding: 50px 0 0
+
+  .user
+    width: 100%
+    height: 70px
+    background:
+      color: $color-secondary-dark
+    display: block
+
+    .image
+      @include border-radius(50%)
+      width: 50px
+      height: 50px
+      margin: 10px 15px
+      float: left
+      overflow: hidden
+      display: block
+
+      img
+        width: 100%
+        min-height: 100%
+
+    .ref
+      width: 120px
+      float: left
+      color: $color-soft
+
+      .name
+        font:
+          size: .8em
+          weight: 800
+        margin: 15px 0 5px
+
+      .category
+        font:
+          size: .6em
+        text-transform: uppercase
+        margin: 0 0 5px
+
+      .status
+        margin: 0
+        text-transform: uppercase
+        font:
+          size: .6em
+
+        .online,
+        .offline
+          @include border-radius(50%)
+          display: inline-block
+          margin: 0 3px
+          width: 7px
+          height: 7px
+          background: greenyellow
+
+        .offline
+          background: red
+
+  .navegation
+    color: $color-secondary-soft
+    margin: 15px 20px
+    text-transform: uppercase
+    font:
+      size: .6em
+      weight: 800
+
+  ul
+    width: 100%
+
+    li
+      width: 100%
+
+      a
+        display: block
+        padding: 15px 20px
+        color: $color-secondary-soft
+        text-transform: uppercase
+        font:
+          size: .8em
+          weight: 600
+
+        &:hover
+          background:
+            color: $color-gray-dark
+
+        span
+          width: 20px
+          text-align: center
+          opacity: .4
+          font:
+            size: 1.2em
+          margin:
+            right: 15px
