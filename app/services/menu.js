@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('thaisMartins');
+var app = angular.module('adminThaisMartins');
 app.factory('MenuService', function () {
 
     var items = [

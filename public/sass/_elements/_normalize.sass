@@ -35,17 +35,21 @@ blockquote:before,
 blockquote:after,
 q:before, q:after
   content: ''
-  content: none
 
 table
   border-collapse: collapse
   border-spacing: 0
 
+html
+  height: 100%
+
 body
   font:
     family: "Raleway"
     weight: 300
+    size: 14px
   line-height: 1
+  height: 100%
 
 a
   text-decoration: none
@@ -58,9 +62,22 @@ a
   &:visited:hover
     text-decoration: none
 
+input,
+select,
+textarea,
+button
+  &:focus,
+  &:active:focus,
+  &:visited:focus
+    border-color: inherit
+    -webkit-box-shadow: none
+    box-shadow: none
+    outline: none
+
 .container-fluid
   padding: 0
   margin: 0
+  height: 100%
 
 section
   height: 100%

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="pt" ng-app="thaisMartins" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="pt" ng-app="thaisMartins" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="pt" ng-app="thaisMartins" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="pt" ng-app="thaisMartins" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="pt" ng-app="adminThaisMartins" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="pt" ng-app="adminThaisMartins" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="pt" ng-app="adminThaisMartins" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="pt" ng-app="adminThaisMartins" class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="/site/">
+    <base href="/admin/">
     <link rel="shortcut icon" href="public/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="public/images/favicon.ico" type="image/x-icon">
-    <title>Thais Martins - Desenvolvedora Web Freelancer</title>
+    <title>Painel Administrativo</title>
 
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
 
@@ -31,16 +31,7 @@
     <![endif]-->
 
     <div ui-view="header"></div>
-    <div class="container-fluid" ng-class="{'modal-open': openModal}">
-        <div ui-view="slide"></div>
-        <div ui-view="about"></div>
-        <div ui-view="skills"></div>
-        <div ui-view="works"></div>
-        <div ui-view="change-page"></div>
-        <div ui-view="works-modal"></div>
-        <div ui-view="works-modal-image"></div>
-        <div ui-view="contact"></div>
-    </div>
+    <div class="container-fluid" ui-view="main" ng-class="{'modal-open': openModal}"></div>
     <div ui-view="footer"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>

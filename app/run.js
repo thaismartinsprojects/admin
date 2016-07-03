@@ -12,4 +12,8 @@ angular.module('adminThaisMartins')
 
     $rootScope.openModal = false;
     $rootScope.isLogged = false;
+
+    $rootScope.doLogin = function() {
+        $rootScope.isLogged = true;
+    };
 }]);

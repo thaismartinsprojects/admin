@@ -1,15 +1,19 @@
 <div id="login">
-    <div class="box">
-        <form name="loginForm">
-            <div class="form-item">
+    <div class="box box-small">
+        <p class="title">painel<strong>admin</strong> <span class="dot"></span></p>
+        <p>Para acessar, digite seus dados.</p>
+        <form name="loginForm" class="form">
+            <div class="form-group">
                 <label for="user">Usuário</label>
                 <input type="text" ng-model="login.user" id="user">
             </div>
-            <div class="form-item">
+            <div class="form-group">
                 <label for="pass">Senha</label>
-                <input type="text" ng-model="login.pass" id="pass">
+                <input type="password" ng-model="login.pass" id="pass">
             </div>
-            <button class="btn btn-special btn-center">Entrar</button>
+            <button class="btn btn-special-fill btn-center btn-medium" ng-click="doLogin()">
+                <span>Entrar</span>
+            </button>
         </form>
     </div>
 </div>

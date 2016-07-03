@@ -8,7 +8,7 @@
     -moz-box-shadow: $top $left $spreat $blur $color
     box-shadow: $top $left $spreat $blur $color
 
-@mixin rounded($radius: 0.5em)
+@mixin border-radius($radius: 0.5em)
   -webkit-border-radius: $radius
   -moz-border-radius: $radius
   border-radius: $radius
@@ -73,9 +73,9 @@
   transition: $valueOne
 
 @mixin create-button-fill($color, $color-font)
-  @include rounded(30px)
+  @include border-radius(30px)
   width: 250px
-  height: 50px
+  height: 45px
   border: none
   position: relative
   background:
@@ -109,7 +109,7 @@
       size: 1.2em
 
   &::before
-    @include rounded(30px)
+    @include border-radius(30px)
     @include box-shadow(0, 0, 0, 135px, $color, true)
     @include scale3d(0.9, 0.9, 1)
     @include transition(box-shadow .2s, transform .2s)
