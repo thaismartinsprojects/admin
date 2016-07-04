@@ -47,7 +47,7 @@
 
       .status
         margin: 0
-        text-transform: uppercase
+        text-transform: lowercase
         font:
           size: .6em
 
@@ -78,6 +78,7 @@
       width: 100%
 
       a
+        @include transition(background .4s)
         display: block
         padding: 15px 20px
         color: $color-secondary-soft
@@ -87,6 +88,7 @@
           weight: 600
 
         &:hover
+          @include transition(background .4s)
           background:
             color: $color-gray-dark
 

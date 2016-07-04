@@ -5,4 +5,39 @@
             <span class="dot"></span>
         </a>
     </div>
+    <ul class="buttons">
+        <li ng-click="toggleMessages()">
+            <span>Mensagens</span> <i class="fa fa-envelope"></i>
+        </li>
+        <li>
+            <span>Sair</span>  <i class="fa fa-sign-in"></i>
+        </li>
+    </ul>
+    <ul class="messages" ng-class="{'active': showMessages}">
+        <li>
+            <a ui-sref="messages">
+                <div class="image">
+                    <img src="public/images/user.jpg" alt="Usuário" title="Usuário">
+                </div>
+                <div class="message">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor..</p>
+                    <small><i class="fa fa-clock-o"></i> a 45min</small>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a ui-sref="messages">
+                <div class="image">
+                    <img src="public/images/user.jpg" alt="Usuário" title="Usuário">
+                </div>
+                <div class="message">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor..</p>
+                    <small><i class="fa fa-clock-o"></i> a 45min</small>
+                </div>
+            </a>
+        </li>
+        <li class="see-all">
+            <a ui-sref="messages">Ver todas mensagens</a>
+        </li>
+    </ul>
 </header>

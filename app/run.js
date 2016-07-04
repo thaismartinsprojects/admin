@@ -16,4 +16,11 @@ angular.module('adminThaisMartins')
     $rootScope.doLogin = function() {
         $rootScope.isLogged = true;
     };
+
+    $rootScope.showMessages = false;
+
+    $rootScope.toggleMessages = function() {
+        $rootScope.showMessages = !$rootScope.showMessages;
+    };
+
 }]);

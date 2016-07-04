@@ -39,83 +39,115 @@ header
       .dot
         margin: 0
 
-  nav
-    color: $color-secondary
+  .buttons
+    width: 50%
+    float: right
+    text-align: right
 
-    p
-      float: right
-      text-transform: uppercase
-      font:
-        weight: 800
-        size: 0.8em
-
-      &.back
-        display: none
-
-      &.menu,
-      &.back
-        margin:
-          top: 30px
-          right: 10px
-
-      &.menu
-        @media #{$xsmall-max}
-          margin:
-            top: 17px
-
-    ul
-      float: right
+    li
+      @include transition(all .4s)
       cursor: pointer
-      margin:
-        top: 20px
-        right: 10px
+      display: inline-block
+      height: 100%
+      padding: 18px
+      color: rgba(255,255,255,.5)
 
-      @media #{$xsmall-max}
+      span
+        font:
+          size: .8em
+        text-transform: lowercase
+        padding: 5px
         margin:
-          top: 10px
+          right: 5px
 
-      li
+      &:hover
+        @include transition(all .4s)
+        color: rgba(255,255,255,1)
         background:
-          color: $color-secondary
-        height: 2px
-        width: 30px
-        margin: 6px 0
+          color: $color-primary
 
+  .messages
+    @include transition(all .4s)
+    width: 0
+    position: absolute
+    right: 88px
+    top: -650px
+    color: $color-dark
+    overflow: hidden
 
-  &.active
-    nav
-      p
-        &.back
+    &.active
+      @include transition(all .4s)
+      width: 250px
+      top: 50px
+
+    li
+      width: 100%
+      height: 100%
+
+      a
+        padding: 10px 0
+        width: 100%
+        height: 100%
+        display: inline-block
+        background:
+          color: $color-gray
+
+        &:hover
+          background:
+            color: $color-gray-dark
+
+        .image
+          @include border-radius(50%)
+          width: 50px
+          height: 50px
+          margin: 10px 15px
+          float: left
+          overflow: hidden
           display: block
 
-          @media #{$xsmall-max}
-            margin:
-              top: 17px
+          img
+            width: 100%
+            min-height: 100%
 
-        &.menu
-          display: none
+        .message
+          position: relative
+          width: 160px
+          float: left
+          padding: 10px
+          font:
+            size: .8em
 
-      ul
-        margin:
-          top: 25px
+          p
+            color: $color-dark
+            line-height: 1.2em
 
-        @media #{$xsmall-max}
-          margin:
-            top: 13px
+          small
+            position: absolute
+            right: 0
+            bottom: 10px
+            font:
+              size: .8em
+              weight: 800
+            color: #99A1A4
 
-        li
-          &:first-child
-            @include transition(all .2s)
-            @include rotate(20)
-            width: 15px
-            margin:
-              left: 15px
-              bottom: -5px
+      &.see-all
+        padding: 0
+        clear: both
+        text:
+          transform: uppercase
+          align: center
+        font:
+          size: .8em
+          weight: 800
 
-          &:last-child
-            @include transition(all .2s)
-            @include rotate(-20)
-            width: 15px
-            margin:
-              left: 15px
-              top: -5px
+        a
+          width: 100%
+          padding: 20px
+          background:
+            color: #A1ACB0
+          color: $color-soft
+          display: block
+
+          &:hover
+            background:
+              color: $color-secondary
