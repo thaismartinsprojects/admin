@@ -3,7 +3,7 @@
 angular.module('adminThaisMartins')
 .run(['$rootScope', 'MenuService', function($rootScope, MenuService) {
 
-    $rootScope.activeMenu = false;
+    $rootScope.activeMenu = true;
     $rootScope.menu = MenuService.getItems();
 
     $rootScope.toogleMenu = function() {

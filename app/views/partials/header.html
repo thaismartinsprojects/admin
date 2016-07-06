@@ -1,13 +1,22 @@
-<header ng-class="{'active': activeMenu}">
+<header>
     <div class="logo">
         <a class="title" ui-sref="/">
             painel<strong>admin</strong>
             <span class="dot"></span>
         </a>
     </div>
+    <nav class="mobile-nav" ng-class="{'mobile': !activeMenu}" ng-click="toogleMenu()">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </nav>
     <ul class="buttons">
         <li ng-click="toggleMessages()">
-            <span>Mensagens</span> <i class="fa fa-envelope"></i>
+            <span>Mensagens</span>
+            <i class="fa fa-envelope"></i>
+            <span class="label label-warning">1</span>
         </li>
         <li>
             <span>Sair</span>  <i class="fa fa-sign-in"></i>
@@ -25,7 +34,7 @@
                 </div>
             </a>
         </li>
-        <li>
+        <li class="not-read">
             <a ui-sref="messages">
                 <div class="image">
                     <img src="public/images/user.jpg" alt="Usuário" title="Usuário">

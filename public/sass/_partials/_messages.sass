@@ -1,0 +1,93 @@
+.messages
+  @include transition(all .4s)
+  width: 0
+  position: absolute
+  right: 86px
+  top: -650px
+  color: $color-dark
+  overflow: hidden
+  z-index: -1
+
+  &.active
+    @include transition(all .4s)
+    width: 250px
+    top: 50px
+
+  li
+    width: 100%
+    height: 100%
+
+    &.not-read
+      a
+        background:
+          color: #ffd376
+
+    a
+      @include transition(background .4s)
+      padding: 10px 0
+      width: 100%
+      height: 100%
+      display: inline-block
+      background:
+        color: $color-gray
+
+      &:hover
+        @include transition(background .4s)
+        background:
+          color: $color-gray-dark
+
+      .image
+        @include border-radius(50%)
+        width: 50px
+        height: 50px
+        margin: 10px 15px
+        float: left
+        overflow: hidden
+        display: block
+
+        img
+          width: 100%
+          min-height: 100%
+
+      .message
+        position: relative
+        width: 160px
+        float: left
+        padding: 10px
+        font:
+          size: .8em
+
+        p
+          color: $color-dark
+          line-height: 1.2em
+
+        small
+          position: absolute
+          right: 0
+          bottom: 10px
+          font:
+            size: .8em
+            weight: 800
+          color: #99A1A4
+
+    &.see-all
+      padding: 0
+      clear: both
+      text:
+        transform: uppercase
+        align: center
+      font:
+        size: .8em
+        weight: 800
+
+      a
+        width: 100%
+        padding: 20px
+        background:
+          color: #A1ACB0
+        color: $color-soft
+        display: block
+
+        &:hover
+          background:
+            color: $color-secondary

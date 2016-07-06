@@ -13,13 +13,15 @@ header
   .logo
     padding: 0
     position: relative
+    width: 200px
 
     .title
       cursor: pointer
       float: left
       color: $color-soft
       letter-spacing: -1px
-      padding: 0 15px 0 40px
+      padding: 0 15px 0 60px
+      width: 100%
       margin:
         top: 13px
       font:
@@ -46,6 +48,7 @@ header
 
     li
       @include transition(all .4s)
+      position: relative
       cursor: pointer
       display: inline-block
       height: 100%
@@ -66,88 +69,52 @@ header
         background:
           color: $color-primary
 
-  .messages
-    @include transition(all .4s)
-    width: 0
+      .label
+        @include border-radius(50%)
+        position: absolute
+        top: 5px
+        right: 0
+        font:
+          size: .7em
+
+  .mobile-nav
     position: absolute
-    right: 88px
-    top: -650px
-    color: $color-dark
-    overflow: hidden
+    left: 17px
+    cursor: pointer
+    float: left
+    height: 100%
+    padding:
+      top: 15px
 
-    &.active
-      @include transition(all .4s)
-      width: 250px
-      top: 50px
-
-    li
+    ul
       width: 100%
       height: 100%
 
-      a
-        padding: 10px 0
-        width: 100%
-        height: 100%
-        display: inline-block
+      li
+        @include transition(all .2s)
+        width: 25px
+        height: 2px
+        margin: 4px 0
+        opacity: 1
         background:
-          color: $color-gray
+          color: rgba(255,255,255,.6)
 
-        &:hover
+      &:hover
+        li
           background:
-            color: $color-gray-dark
+            color: rgba(255,255,255,.8)
 
-        .image
-          @include border-radius(50%)
-          width: 50px
-          height: 50px
-          margin: 10px 15px
-          float: left
-          overflow: hidden
-          display: block
+    &.mobile
+      li
+        &:first-child
+          @include rotate(45)
+          margin:
+            top: 10px
 
-          img
-            width: 100%
-            min-height: 100%
+        &:nth-child(2)
+          opacity: 0
 
-        .message
-          position: relative
-          width: 160px
-          float: left
-          padding: 10px
-          font:
-            size: .8em
-
-          p
-            color: $color-dark
-            line-height: 1.2em
-
-          small
-            position: absolute
-            right: 0
-            bottom: 10px
-            font:
-              size: .8em
-              weight: 800
-            color: #99A1A4
-
-      &.see-all
-        padding: 0
-        clear: both
-        text:
-          transform: uppercase
-          align: center
-        font:
-          size: .8em
-          weight: 800
-
-        a
-          width: 100%
-          padding: 20px
-          background:
-            color: #A1ACB0
-          color: $color-soft
-          display: block
-
-          &:hover
-            background:
-              color: $color-secondary
+        &:last-child
+          @include rotate(-45)
+          margin:
+            top: -12px

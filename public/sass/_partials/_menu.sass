@@ -1,4 +1,5 @@
 #menu
+  @include transition(all .4s)
   height: 100%
   width: 200px
   background:
@@ -8,15 +9,54 @@
   left: 0
   padding: 50px 0 0
 
+  &.mobile
+    width: 60px
+
+    .user
+      .image
+        margin: 10px 5px
+
+      .ref
+        display: none
+
+    .navegation
+      display: none
+
+    ul li a
+      i
+        font:
+          size: 1.4em
+
+      span
+        display: none
+
   .user
     width: 100%
     height: 70px
     background:
       color: $color-secondary-dark
     display: block
+    cursor: pointer
+    position: relative
+
+    &:after
+      @include transition(all .3s)
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+
+    &:hover
+      &:after
+        background:
+          color: rgba(42, 50, 61, .3)
+        width: 100%
+        height: 100%
 
     .image
       @include border-radius(50%)
+      position: relative
       width: 50px
       height: 50px
       margin: 10px 15px
@@ -35,21 +75,22 @@
 
       .name
         font:
-          size: .8em
+          size: .9em
           weight: 800
         margin: 15px 0 5px
 
       .category
         font:
-          size: .6em
-        text-transform: uppercase
+          size: .7em
+        text-transform: capitalize
         margin: 0 0 5px
 
       .status
         margin: 0
         text-transform: lowercase
         font:
-          size: .6em
+          size: .7em
+          style: italic
 
         .online,
         .offline
@@ -84,7 +125,7 @@
         color: $color-secondary-soft
         text-transform: uppercase
         font:
-          size: .8em
+          size: .9em
           weight: 600
 
         &:hover
@@ -92,7 +133,7 @@
           background:
             color: $color-gray-dark
 
-        span
+        i
           width: 20px
           text-align: center
           opacity: .4

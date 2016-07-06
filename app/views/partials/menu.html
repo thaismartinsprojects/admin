@@ -1,4 +1,4 @@
-<aside id="menu" class="col-xs-4">
+<aside id="menu" class="col-xs-4" ng-class="{'mobile': activeMenu}">
     <div class="user">
         <div class="image">
             <img src="public/images/user.jpg" alt="Usuário" title="Usuário">
@@ -12,8 +12,8 @@
     <p class="navegation">Navegação</p>
     <ul>
         <li ng-repeat="item in menu" data-menuanchor="{{item.slug}}">
-            <a ui-sref="{{item.slug}}" ng-click="toogleMenu()">
-                <span class="fa fa-{{item.icon}}"></span> {{item.name}}
+            <a ui-sref="{{item.slug}}">
+                <i class="fa fa-{{item.icon}}"></i> <span>{{item.name}}</span>
             </a>
             <span></span>
         </li>
