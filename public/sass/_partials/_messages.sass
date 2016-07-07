@@ -8,6 +8,9 @@
   overflow: hidden
   z-index: -1
 
+  @media #{$xsmall-max}
+    right: 0
+
   &.active
     @include transition(all .4s)
     width: 250px

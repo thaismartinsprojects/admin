@@ -15,6 +15,9 @@ header
     position: relative
     width: 200px
 
+    @media #{$xsmall-max}
+      width: 60%
+
     .title
       cursor: pointer
       float: left
@@ -26,13 +29,6 @@ header
         top: 13px
       font:
         size: 1.5em
-
-
-      @media #{$xsmall-max}
-        padding:
-          left: 15px
-        margin:
-          top: 4px
 
       b,
       strong
@@ -46,6 +42,9 @@ header
     float: right
     text-align: right
 
+    @media #{$xsmall-max}
+      width: 40%
+
     li
       @include transition(all .4s)
       position: relative
@@ -55,6 +54,9 @@ header
       padding: 18px 40px 18px 18px
       color: rgba(255,255,255,.5)
 
+      @media #{$xsmall-max}
+        padding: 25px
+
       span:not(.label)
         font:
           size: .9em
@@ -62,6 +64,9 @@ header
         padding: 5px
         margin:
           right: 5px
+
+        @media #{$xsmall-max}
+          display: none
 
       i
         position: absolute
