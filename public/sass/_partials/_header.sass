@@ -1,5 +1,5 @@
 header
-  height: 50px
+  height: 60px
   position: absolute
   padding: 0
   margin: 0
@@ -13,7 +13,7 @@ header
   .logo
     padding: 0
     position: relative
-    width: 200px
+    width: 240px
 
     @media #{$xsmall-max}
       width: 60%
@@ -23,12 +23,13 @@ header
       float: left
       color: $color-soft
       letter-spacing: -1px
-      padding: 0 15px 0 60px
+      padding:
+        left: 60px
       width: 100%
       margin:
-        top: 13px
+        top: 17px
       font:
-        size: 1.5em
+        size: 1.8em
 
       b,
       strong
@@ -51,11 +52,11 @@ header
       cursor: pointer
       display: inline-block
       height: 100%
-      padding: 18px 40px 18px 18px
+      padding: 24px 40px 23px 24px
       color: rgba(255,255,255,.5)
 
       @media #{$xsmall-max}
-        padding: 25px
+        padding: 30px 25px
 
       span:not(.label)
         font:
@@ -70,7 +71,7 @@ header
 
       i
         position: absolute
-        top: 17px
+        top: 23px
         right: 13px
         font:
           size: 1.6em
@@ -85,7 +86,7 @@ header
         @include border-radius(50%)
         position: absolute
         padding: 5px 7px
-        top: 5px
+        top: 10px
         right: 0
         font:
           size: .7em
@@ -97,7 +98,7 @@ header
     float: left
     height: 100%
     padding:
-      top: 15px
+      top: 21px
 
     ul
       width: 100%
