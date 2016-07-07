@@ -24,6 +24,47 @@
       font:
         size: 1em
 
+    input[type=file]
+      display: none
+
+    .input-file
+      @include border-radius(25px)
+      overflow: hidden
+      width: 300px
+      padding: 13px 110px 13px 20px
+      position: relative
+      margin: 5px
+      font:
+        style: italic
+        size: .9em
+      background:
+        color: $color-gray
+      color: $color-secondary-soft
+      border: 1px solid $color-gray-dark
+      max-width: 100%
+
+      span
+        position: absolute
+        cursor: pointer
+        top: 0
+        right: 0
+        width: 100px
+        height: 100%
+        padding: 13px 20px
+        font:
+          size: .9em
+          style: normal
+        text:
+          align: center
+          transform: uppercase
+        background:
+          color: $color-gray-dark
+
+        &:hover
+          color: $color-soft
+          background:
+            color: darken($color-gray-dark, 20%)
+
     textarea
       @include border-radius(15px)
       height: 100px

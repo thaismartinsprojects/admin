@@ -107,6 +107,26 @@ angular.module('adminThaisMartins', [
                     controller: 'SkillsController'
                 }
             }
+        })
+        .state('works', {
+            url: "/works",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/works/index.html',
+                    controller: 'WorksController'
+                }
+            }
+        })
+        .state('works.add', {
+            url: "/works/new",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/works/form.html',
+                    controller: 'WorksController'
+                }
+            }
         });
 
 

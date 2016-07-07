@@ -1,0 +1,50 @@
+<div class="pages" ng-class="{'mobile': activeMenu}">
+    <div class="breadcrumbs">
+        Home / Menu / Adicionar Novo Trabalho
+    </div>
+    <div class="col-xs-12">
+        <h1><i class="ss-icon ss-index"></i> Trabalho</h1>
+    </div>
+
+    <div class="page col-xs-12">
+        <form name="menuForm" class="form">
+            <div class="form-group col-xs-12">
+                <label for="title">Título</label>
+                <input type="text" class="form-control" ng-model="work.title" id="title">
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="shortdescription">Descrição Rápida</label>
+                <input type="text" class="form-control" ng-model="work.shortdescription" id="shortdescription">
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="description">Descrição Completa</label>
+                <textarea class="form-control" ng-model="work.description" id="description"></textarea>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="multiple-option">Tags <small>Pressione <i>ENTER</i> para inserir</small></label>
+                <input type="text" class="form-control" ng-model="work.tag" id="multiple-option">
+                <multiple-list ng-model-list="work.tags"></multiple-list>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="logo">Logo <small>Logo na cor branca</small></label>
+                <file ng-model="work.logo" on-select="changeImages(model)" id="logo" classes="form-control" type="image/x-png, image/jpeg"></file>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="images">Imagens</label>
+                <file ng-model="work.images" on-select="changeImages(model)" id="images" classes="form-control" type="image/x-png, image/jpeg" multiple="true"></file>
+            </div>
+            <div class="footer">
+                <div class="col-xs-12 col-sm-6">
+                    <a ui-sref="menus" class="btn btn-secondary-fill bt-top">
+                        <span>Voltar</span>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <button class="btn btn-primary-fill">
+                        <span>Salvar</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
