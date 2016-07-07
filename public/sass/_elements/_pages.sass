@@ -6,6 +6,10 @@
   height: 100%
   padding: 70px 20px 20px 220px
 
+  @media #{$xsmall-max}
+    padding:
+      left: 80px
+
   &.mobile
     padding:
       left: 80px
@@ -29,6 +33,10 @@
     margin: 0
     font:
       size: .9em
+
+    @media #{$xsmall-max}
+      margin: 10px auto 0
+      display: block
 
     i
       top: 7px
