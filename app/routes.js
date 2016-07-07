@@ -6,7 +6,7 @@ angular.module('adminThaisMartins', [
 ])
 .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise("/login");
 
     $stateProvider
         .state('root', {
@@ -62,6 +62,49 @@ angular.module('adminThaisMartins', [
                 'main@': {
                     templateUrl: 'app/views/menus/form.html',
                     controller: 'MenusController'
+                }
+            }
+        })
+        .state('skills', {
+            parent: 'root',
+        })
+        .state('skills.categories', {
+            url: "/skills",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/skills/categories/index.html',
+                    controller: 'SkillsController'
+                }
+            }
+        })
+        .state('skills.categories.add', {
+            url: "/skills/new",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/skills/categories/form.html',
+                    controller: 'SkillsController'
+                }
+            }
+        })
+        .state('skills.items', {
+            url: "/skills/items",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/skills/items/index.html',
+                    controller: 'SkillsController'
+                }
+            }
+        })
+        .state('skills.items.add', {
+            url: "/skills/items/new",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/skills/items/form.html',
+                    controller: 'SkillsController'
                 }
             }
         });

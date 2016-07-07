@@ -6,20 +6,34 @@
     position: relative
     margin: 10px 0
 
+    .alert
+      font:
+        style: italic
+      color: $color-secondary-soft
+
     input,
     textarea,
     select,
     .form-select
-      @include border-radius(25px)
       width: 100%
       background:
         color: $color-soft
       border: 1px solid $color-gray-dark
       color: $color-dark
       resize: none
-      padding: 20px
       font:
         size: 1em
+
+    textarea
+      @include border-radius(15px)
+      height: 100px
+      padding: 15px 20px
+
+    input,
+    select,
+    .form-select
+      @include border-radius(25px)
+      padding: 20px
 
     label
       @include transition(all .3s)
@@ -28,6 +42,15 @@
         weight: 600
       text-transform: uppercase
       margin: 10px
+
+      small
+        text-transform: none
+        color: $color-secondary-soft
+        margin:
+          left: 5px
+        font:
+          size: .8em
+          weight: 400
 
   &.form-login
     .form-group

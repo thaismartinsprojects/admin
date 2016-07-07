@@ -12,10 +12,19 @@
     <p class="navegation">Navegação</p>
     <ul>
         <li ng-repeat="item in menu" data-menuanchor="{{item.slug}}">
-            <a ui-sref="{{item.slug}}">
+            <a ui-sref="{{item.slug}}" ng-if="!item.childs">
                 <i class="ss-icon ss-{{item.icon}}"></i> <span>{{item.name}}</span>
             </a>
-            <span></span>
+            <a ng-if="item.childs" ng-click="item.showChilds = !item.showChilds" ng-init="item.showChilds = false">
+                <i class="ss-icon ss-{{item.icon}}"></i> <span>{{item.name}}</span>
+            </a>
+            <ul class="child" ng-if="item.childs" ng-class="{'active': item.showChilds}">
+                <li ng-repeat="child in item.childs">
+                    <a ui-sref="{{child.slug}}">
+                        <i class="ss-icon ss-{{child.icon}}"></i> <span>{{child.name}}</span>
+                    </a>
+                </li>
+            </ul>
         </li>
     </ul>
 </aside>

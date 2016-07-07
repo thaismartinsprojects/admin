@@ -1,0 +1,42 @@
+<div class="pages" ng-class="{'mobile': activeMenu}">
+    <div class="breadcrumbs">
+        Home / Skills / Categorias / Adicionar Nova Categoria
+    </div>
+    <div class="col-xs-12">
+        <h1><i class="ss-icon ss-rows"></i> Skills | Categoria</h1>
+    </div>
+
+    <div class="page col-xs-12">
+        <form name="menuForm" class="form">
+            <div class="form-group col-xs-12">
+                <label for="title">Título</label>
+                <input type="text" class="form-control" ng-model="skill.title" id="title">
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="description">Descrição</label>
+                <textarea class="form-control" ng-model="skill.description" id="description"></textarea>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="items">Itens <small>Multiplas escolhas</small></label>
+                <ul ng-if="items" id="items" class="list-items">
+                    <li ng-repeat="item in items" ng-click="addItem(item)" ng-class="{'active': item.icon == icon}">
+                        <i class="fa {{item.icon}}"></i> {{item.name}}
+                    </li>
+                </ul>
+                <p class="alert" ng-if="!items">Nenhum item encontrado. Adicione em Skills > Items.</p>
+            </div>
+            <div class="footer">
+                <div class="col-xs-6">
+                    <a ui-sref="skills.categories" class="btn btn-secondary-fill bt-top">
+                        <span>Voltar</span>
+                    </a>
+                </div>
+                <div class="col-xs-6">
+                    <button class="btn btn-primary-fill">
+                        <span>Salvar</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
