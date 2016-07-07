@@ -1,0 +1,33 @@
+.form-select
+  @include transition(height .3s)
+  cursor: pointer
+  width: 100%
+  height: 40px
+  overflow-y: auto
+  padding: 5px 20px !important
+  background:
+    image: url('../images/icon-select.png')
+    position: right center
+    repeat: no-repeat
+
+  &.active
+    height: 200px
+
+    li
+      display: block
+
+  li
+    display: none
+    padding: 10px
+
+    &:nth-child(1)
+      display: block
+      color: lighten($color-dark, 30%)
+      padding: 7px 10px
+
+    &.selected
+      background: red
+
+    i
+      margin:
+        right: 10px

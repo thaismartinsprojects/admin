@@ -1,0 +1,33 @@
+<div class="pages" ng-class="{'mobile': activeMenu}">
+    <div class="breadcrumbs">
+        Home / Menu / Adicionar Novo Menu
+    </div>
+    <div class="col-xs-12">
+        <h1><i class="ss-icon ss-index"></i> Menu</h1>
+    </div>
+
+    <div class="page col-xs-12">
+        <form name="menuForm" class="form">
+            <div class="form-group col-xs-12">
+                <label for="title">Título</label>
+                <input type="text" class="form-control" ng-model="menu.title" id="title">
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="slug">Slug</label>
+                <input type="text" class="form-control" ng-model="menu.slug" id="slug">
+            </div>
+            <div class="footer">
+                <div class="col-xs-6">
+                    <a ui-sref="menus" class="btn btn-secondary-fill bt-top">
+                        <span>Voltar</span>
+                    </a>
+                </div>
+                <div class="col-xs-6">
+                    <button class="btn btn-primary-fill">
+                        <span>Salvar</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

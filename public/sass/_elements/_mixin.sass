@@ -75,23 +75,19 @@
 @mixin create-button-fill($color, $color-font)
   @include border-radius(30px)
   width: 250px
-  height: 45px
+  height: 40px
   border: none
   position: relative
   background:
     color: transparent
 
   span,
-  i
-    @include transition(color .3s)
+  i:not(.right):not(.left)
     position: absolute
-    top: 0
-    bottom: 0
     right: 0
     left: 0
     margin: auto
     z-index: 2
-    color: $color-font
     vertical-align: middle
     display: inline-table
     text:
@@ -100,13 +96,20 @@
     width: 100%
 
   span
+    @include transition(color .3s)
+    top: 0
+    bottom: 0
+    color: $color-font
     font:
       weight: 600
       size: .9em
 
   i
+    @include transition(color .3s)
+    color: $color-font
+    top: 7px
     font:
-      size: 1.2em
+      size: 1.3em
 
   &::before
     @include border-radius(30px)

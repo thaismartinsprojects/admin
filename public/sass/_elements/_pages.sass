@@ -17,13 +17,23 @@
     strong
       color: $color-primary
 
+    i
+      margin:
+        top: 5px
+        right: 10px
+
   .btn-top
     height: 30px
     min-width: 160px
-    max-width: 200px
+    max-width: 210px
     margin: 0
     font:
-      size: .8em
+      size: .9em
+
+    i
+      top: 7px
+      font:
+        size: 1.1em
 
   .page
     @include border-radius(10px)
@@ -32,6 +42,10 @@
     min-height: 300px
     background:
       color: $color-soft
-    padding: 20px
+    padding: 20px 20px 80px
     margin:
       top: 30px
+
+    .footer
+      position: absolute
+      bottom: 0

@@ -44,6 +44,16 @@ angular.module('adminThaisMartins', [
                     controller: 'MenusController'
                 }
             }
+        })
+        .state('menus.add', {
+            url: "/menus/new",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/menus/form.html',
+                    controller: 'MenusController'
+                }
+            }
         });
 
 

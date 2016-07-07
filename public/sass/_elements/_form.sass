@@ -1,41 +1,57 @@
 .form
+  width: 100%
+  max-width: 600px
+
   .form-group
     position: relative
-    margin: 40px 0
+    margin: 10px 0
 
     input,
     textarea,
-    select
+    select,
+    .form-select
       @include border-radius(25px)
       width: 100%
       background:
         color: $color-soft
       border: 1px solid $color-gray-dark
-      padding: 7px 20px
       color: $color-dark
       resize: none
+      padding: 20px
       font:
         size: 1em
 
     label
       @include transition(all .3s)
-      position: absolute
       color: $color-secondary
       font:
         weight: 600
-      left: 20px
-      top: 12px
       text-transform: uppercase
+      margin: 10px
 
-    &.active
+  &.form-login
+    .form-group
+      margin: 40px 0
+
       label
-        top: -20px
+        @include transition(all .3s)
+        position: absolute
+        color: $color-secondary
         font:
-          size: .9em
-        color: $color-soft
+          weight: 600
+        left: 10px
+        top: 5px
+        text-transform: uppercase
 
-      input,
-      textarea,
-      select
-        border:
-          color: $color-secondary-soft
+      &.active
+        label
+          top: -30px
+          font:
+            size: .9em
+          color: $color-soft
+
+        input,
+        textarea,
+        select
+          border:
+            color: $color-secondary-soft

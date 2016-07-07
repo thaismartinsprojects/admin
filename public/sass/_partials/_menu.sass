@@ -23,12 +23,13 @@
       display: none
 
     ul li a
-      i
-        font:
-          size: 1.4em
+      padding: 25px 15px
 
       span
         display: none
+
+      i
+        top: 18px
 
   .user
     width: 100%
@@ -81,8 +82,9 @@
 
       .category
         font:
-          size: .7em
-        text-transform: capitalize
+          size: .8em
+          weight: 600
+        text-transform: lowercase
         margin: 0 0 5px
 
       .status
@@ -107,10 +109,10 @@
   .navegation
     color: $color-secondary-soft
     margin: 15px 20px
-    text-transform: uppercase
+    text-transform: lowercase
     font:
-      size: .6em
-      weight: 800
+      size: .8em
+      weight: 600
 
   ul
     width: 100%
@@ -121,9 +123,10 @@
       a
         @include transition(background .4s)
         display: block
-        padding: 15px 20px
+        padding: 15px 15px 15px 55px
         color: $color-secondary-soft
         text-transform: uppercase
+        position: relative
         font:
           size: .9em
           weight: 600
@@ -134,10 +137,10 @@
             color: $color-gray-dark
 
         i
+          position: absolute
           width: 20px
           text-align: center
+          left: 18px
           opacity: .4
           font:
-            size: 1.2em
-          margin:
-            right: 15px
+            size: 1.6em

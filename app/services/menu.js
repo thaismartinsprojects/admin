@@ -1,14 +1,14 @@
 'use strict';
 
-var app = angular.module('adminThaisMartins');
-app.factory('MenuService', function () {
+angular.module('adminThaisMartins')
+.factory('MenuService', function () {
 
     var items = [
-        {id: 1, name: 'Dashboard', icon: 'book', slug: 'dashboard'},
-        {id: 2, name: 'Menu', icon: 'bars', slug: 'menus'},
-        {id: 3, name: 'Serviços', icon: 'flash', slug: 'skills'},
-        {id: 4, name: 'Trabalhos', icon: 'code', slug: 'works'},
-        {id: 5, name: 'Contatos', icon: 'comments-o', slug: 'contacts'}
+        {id: 1, name: 'Dashboard', icon: 'home', slug: 'dashboard'},
+        {id: 2, name: 'Menu', icon: 'index', slug: 'menus'},
+        {id: 3, name: 'Serviços', icon: 'lightbulb', slug: 'skills'},
+        {id: 4, name: 'Trabalhos', icon: 'laptop', slug: 'works'},
+        {id: 5, name: 'Contatos', icon: 'mail', slug: 'contacts'}
     ];
 
     return {

@@ -1,0 +1,1308 @@
+@charset "UTF-8"
+
+/*
+ ** Symbolset
+ ** www.symbolset.com
+ ** Copyright © 2012 Oak Studios LLC
+ **
+ ** Upload this file to your web server
+ ** and place this within your <head> tags.
+ ** <link href="webfonts/ss-pika.css" rel="stylesheet" />
+
+@font-face
+  font-family: "SSGizmo"
+  src: url('../fonts/ss-gizmo.eot')
+  src: url('../fonts/ss-gizmo.eot?#iefix') format("embedded-opentype"), url('../fonts/ss-gizmo.woff') format("woff"), url('../fonts/ss-gizmo.ttf') format("truetype"), url('../fonts/ss-gizmo.svg#SSGizmo') format("svg")
+  font-weight: normal
+  font-style: normal
+
+
+.ss-icon
+  font-family: "SSGizmo"
+  font-style: normal
+  font-weight: normal
+  text-decoration: none
+  text-rendering: optimizeLegibility
+  white-space: nowrap
+  -webkit-font-feature-settings: "liga"
+  -moz-font-feature-settings: "liga=1"
+  -moz-font-feature-settings: "liga"
+  -ms-font-feature-settings: "liga" 1
+  -o-font-feature-settings: "liga"
+  font-feature-settings: "liga"
+  -webkit-font-smoothing: antialiased
+
+  &.ss-gizmo
+    font-family: "SSGizmo"
+    font-style: normal
+    font-weight: normal
+    text-decoration: none
+    text-rendering: optimizeLegibility
+    white-space: nowrap
+    -webkit-font-feature-settings: "liga"
+    -moz-font-feature-settings: "liga=1"
+    -moz-font-feature-settings: "liga"
+    -ms-font-feature-settings: "liga" 1
+    -o-font-feature-settings: "liga"
+    font-feature-settings: "liga"
+    -webkit-font-smoothing: antialiased
+
+[class^="ss-"]:before, [class*=" ss-"]:before, [class^="ss-"].ss-gizmo:before, [class*=" ss-"].ss-gizmo:before, [class^="ss-"].right:after, [class*=" ss-"].right:after, [class^="ss-"].ss-gizmo.right:after, [class*=" ss-"].ss-gizmo.right:after
+  font-family: "SSGizmo"
+  font-style: normal
+  font-weight: normal
+  text-decoration: none
+  text-rendering: optimizeLegibility
+  white-space: nowrap
+  -webkit-font-feature-settings: "liga"
+  -moz-font-feature-settings: "liga=1"
+  -moz-font-feature-settings: "liga"
+  -ms-font-feature-settings: "liga" 1
+  -o-font-feature-settings: "liga"
+  font-feature-settings: "liga"
+  -webkit-font-smoothing: antialiased
+
+[class^="ss-"].right:before
+  display: none
+  content: ''
+
+[class*=" ss-"]
+  &.right:before, &.ss-gizmo.right:before
+    display: none
+    content: ''
+
+.ss-cursor
+  &:before, &.right:after
+    content: ''
+
+.ss-crosshair
+  &:before, &.right:after
+    content: '⌖'
+
+.ss-search
+  &:before, &.right:after
+    content: '🔎'
+
+.ss-zoomin
+  &:before, &.right:after
+    content: ''
+
+.ss-zoomout
+  &:before, &.right:after
+    content: ''
+
+.ss-view
+  &:before, &.right:after
+    content: '👀'
+
+.ss-attach
+  &:before, &.right:after
+    content: '📎'
+
+.ss-link
+  &:before, &.right:after
+    content: '🔗'
+
+.ss-unlink
+  &:before, &.right:after
+    content: ''
+
+.ss-move
+  &:before, &.right:after
+    content: ''
+
+.ss-write
+  &:before, &.right:after
+    content: '✎'
+
+.ss-writingdisabled
+  &:before, &.right:after
+    content: ''
+
+.ss-erase
+  &:before, &.right:after
+    content: '✐'
+
+.ss-compose
+  &:before, &.right:after
+    content: '📝'
+
+.ss-lock
+  &:before, &.right:after
+    content: '🔒'
+
+.ss-unlock
+  &:before, &.right:after
+    content: '🔓'
+
+.ss-key
+  &:before, &.right:after
+    content: '🔑'
+
+.ss-backspace
+  &:before, &.right:after
+    content: '⌫'
+
+.ss-ban
+  &:before, &.right:after
+    content: '🚫'
+
+.ss-smoking
+  &:before, &.right:after
+    content: '🚬'
+
+.ss-nosmoking
+  &:before, &.right:after
+    content: '🚭'
+
+.ss-trash
+  &:before, &.right:after
+    content: ''
+
+.ss-target
+  &:before, &.right:after
+    content: '◎'
+
+.ss-tag
+  &:before, &.right:after
+    content: ''
+
+.ss-bookmark
+  &:before, &.right:after
+    content: '🔖'
+
+.ss-flag
+  &:before, &.right:after
+    content: '⚑'
+
+.ss-like
+  &:before, &.right:after
+    content: '👍'
+
+.ss-dislike
+  &:before, &.right:after
+    content: '👎'
+
+.ss-heart
+  &:before, &.right:after
+    content: '♥'
+
+.ss-star
+  &:before, &.right:after
+    content: '⋆'
+
+.ss-sample
+  &:before, &.right:after
+    content: ''
+
+.ss-crop
+  &:before, &.right:after
+    content: ''
+
+.ss-layers
+  &:before, &.right:after
+    content: ''
+
+.ss-layergroup
+  &:before, &.right:after
+    content: ''
+
+.ss-pen
+  &:before, &.right:after
+    content: '✒'
+
+.ss-bezier
+  &:before, &.right:after
+    content: ''
+
+.ss-pixels
+  &:before, &.right:after
+    content: ''
+
+.ss-phone
+  &:before, &.right:after
+    content: '📞'
+
+.ss-phonedisabled
+  &:before, &.right:after
+    content: ''
+
+.ss-touchtonephone
+  &:before, &.right:after
+    content: '☏'
+
+.ss-mail
+  &:before, &.right:after
+    content: '✉'
+
+.ss-inbox
+  &:before, &.right:after
+    content: '📥'
+
+.ss-outbox
+  &:before, &.right:after
+    content: '📤'
+
+.ss-chat
+  &:before, &.right:after
+    content: '💬'
+
+.ss-user
+  &:before, &.right:after
+    content: '👤'
+
+.ss-users
+  &:before, &.right:after
+    content: '👥'
+
+.ss-usergroup
+  &:before, &.right:after
+    content: ''
+
+.ss-businessuser
+  &:before, &.right:after
+    content: ''
+
+.ss-man
+  &:before, &.right:after
+    content: '👨'
+
+.ss-male
+  &:before, &.right:after
+    content: ''
+
+.ss-woman
+  &:before, &.right:after
+    content: '👩'
+
+.ss-female
+  &:before, &.right:after
+    content: ''
+
+.ss-raisedhand
+  &:before, &.right:after
+    content: '✋'
+
+.ss-hand
+  &:before, &.right:after
+    content: ''
+
+.ss-pointup
+  &:before, &.right:after
+    content: '👆'
+
+.ss-pointupright
+  &:before, &.right:after
+    content: ''
+
+.ss-pointright
+  &:before, &.right:after
+    content: '👉'
+
+.ss-pointdownright
+  &:before, &.right:after
+    content: ''
+
+.ss-pointdown
+  &:before, &.right:after
+    content: '👇'
+
+.ss-pointdownleft
+  &:before, &.right:after
+    content: ''
+
+.ss-pointleft
+  &:before, &.right:after
+    content: '👈'
+
+.ss-pointupleft
+  &:before, &.right:after
+    content: ''
+
+.ss-cart
+  &:before, &.right:after
+    content: ''
+
+.ss-creditcard
+  &:before, &.right:after
+    content: '💳'
+
+.ss-calculator
+  &:before, &.right:after
+    content: ''
+
+.ss-barchart
+  &:before, &.right:after
+    content: '📊'
+
+.ss-piechart
+  &:before, &.right:after
+    content: ''
+
+.ss-box
+  &:before, &.right:after
+    content: '📦'
+
+.ss-home
+  &:before, &.right:after
+    content: '⌂'
+
+.ss-globe
+  &:before, &.right:after
+    content: '🌎'
+
+.ss-navigate
+  &:before, &.right:after
+    content: ''
+
+.ss-compass
+  &:before, &.right:after
+    content: ''
+
+.ss-signpost
+  &:before, &.right:after
+    content: ''
+
+.ss-location
+  &:before, &.right:after
+    content: ''
+
+.ss-floppydisk
+  &:before, &.right:after
+    content: '💾'
+
+.ss-database
+  &:before, &.right:after
+    content: ''
+
+.ss-hdd
+  &:before, &.right:after
+    content: ''
+
+.ss-microchip
+  &:before, &.right:after
+    content: ''
+
+.ss-music
+  &:before, &.right:after
+    content: '♫'
+
+.ss-headphones
+  &:before, &.right:after
+    content: '🎧'
+
+.ss-discdrive
+  &:before, &.right:after
+    content: ''
+
+.ss-volume
+  &:before, &.right:after
+    content: '🔈'
+
+.ss-lowvolume
+  &:before, &.right:after
+    content: '🔉'
+
+.ss-mediumvolume
+  &:before, &.right:after
+    content: ''
+
+.ss-highvolume
+  &:before, &.right:after
+    content: '🔊'
+
+.ss-airplay
+  &:before, &.right:after
+    content: ''
+
+.ss-camera
+  &:before, &.right:after
+    content: '📷'
+
+.ss-picture
+  &:before, &.right:after
+    content: '🌄'
+
+.ss-video
+  &:before, &.right:after
+    content: '📹'
+
+.ss-webcam
+  &:before, &.right:after
+    content: ''
+
+.ss-film
+  &:before, &.right:after
+    content: ''
+
+.ss-playvideo
+  &:before, &.right:after
+    content: ''
+
+.ss-videogame
+  &:before, &.right:after
+    content: '🎮'
+
+.ss-play
+  &:before, &.right:after
+    content: '▶'
+
+.ss-pause
+  &:before, &.right:after
+    content: ''
+
+.ss-stop
+  &:before, &.right:after
+    content: '■'
+
+.ss-record
+  &:before, &.right:after
+    content: '●'
+
+.ss-rewind
+  &:before, &.right:after
+    content: '⏪'
+
+.ss-fastforward
+  &:before, &.right:after
+    content: '⏩'
+
+.ss-skipback
+  &:before, &.right:after
+    content: '⏮'
+
+.ss-skipforward
+  &:before, &.right:after
+    content: '⏭'
+
+.ss-eject
+  &:before, &.right:after
+    content: '⏏'
+
+.ss-repeat
+  &:before, &.right:after
+    content: '🔁'
+
+.ss-replay
+  &:before, &.right:after
+    content: '↺'
+
+.ss-shuffle
+  &:before, &.right:after
+    content: '🔀'
+
+.ss-index
+  &:before, &.right:after
+    content: ''
+
+.ss-storagebox
+  &:before, &.right:after
+    content: ''
+
+.ss-book
+  &:before, &.right:after
+    content: '📕'
+
+.ss-notebook
+  &:before, &.right:after
+    content: '📓'
+
+.ss-newspaper
+  &:before, &.right:after
+    content: '📰'
+
+.ss-gridlines
+  &:before, &.right:after
+    content: ''
+
+.ss-rows
+  &:before, &.right:after
+    content: ''
+
+.ss-columns
+  &:before, &.right:after
+    content: ''
+
+.ss-thumbnails
+  &:before, &.right:after
+    content: ''
+
+.ss-mouse
+  &:before, &.right:after
+    content: ''
+
+.ss-usb
+  &:before, &.right:after
+    content: ''
+
+.ss-desktop
+  &:before, &.right:after
+    content: '💻'
+
+.ss-laptop
+  &:before, &.right:after
+    content: ''
+
+.ss-tablet
+  &:before, &.right:after
+    content: ''
+
+.ss-smartphone
+  &:before, &.right:after
+    content: ''
+
+.ss-cell
+  &:before, &.right:after
+    content: '📱'
+
+.ss-battery
+  &:before, &.right:after
+    content: '🔋'
+
+.ss-highbattery
+  &:before, &.right:after
+    content: ''
+
+.ss-mediumbattery
+  &:before, &.right:after
+    content: ''
+
+.ss-lowbattery
+  &:before, &.right:after
+    content: ''
+
+.ss-chargingbattery
+  &:before, &.right:after
+    content: ''
+
+.ss-lightbulb
+  &:before, &.right:after
+    content: '💡'
+
+.ss-washer
+  &:before, &.right:after
+    content: ''
+
+.ss-downloadcloud
+  &:before, &.right:after
+    content: ''
+
+.ss-download
+  &:before, &.right:after
+    content: ''
+
+.ss-downloadbox
+  &:before, &.right:after
+    content: ''
+
+.ss-uploadcloud
+  &:before, &.right:after
+    content: ''
+
+.ss-upload
+  &:before, &.right:after
+    content: ''
+
+.ss-uploadbox
+  &:before, &.right:after
+    content: ''
+
+.ss-fork
+  &:before, &.right:after
+    content: ''
+
+.ss-merge
+  &:before, &.right:after
+    content: ''
+
+.ss-refresh
+  &:before, &.right:after
+    content: '↻'
+
+.ss-sync
+  &:before, &.right:after
+    content: ''
+
+.ss-loading
+  &:before, &.right:after
+    content: ''
+
+.ss-file
+  &:before, &.right:after
+    content: '📄'
+
+.ss-files
+  &:before, &.right:after
+    content: ''
+
+.ss-addfile
+  &:before, &.right:after
+    content: ''
+
+.ss-removefile
+  &:before, &.right:after
+    content: ''
+
+.ss-checkfile
+  &:before, &.right:after
+    content: ''
+
+.ss-deletefile
+  &:before, &.right:after
+    content: ''
+
+.ss-exe
+  &:before, &.right:after
+    content: ''
+
+.ss-zip
+  &:before, &.right:after
+    content: ''
+
+.ss-doc
+  &:before, &.right:after
+    content: ''
+
+.ss-pdf
+  &:before, &.right:after
+    content: ''
+
+.ss-jpg
+  &:before, &.right:after
+    content: ''
+
+.ss-png
+  &:before, &.right:after
+    content: ''
+
+.ss-mp3
+  &:before, &.right:after
+    content: ''
+
+.ss-rar
+  &:before, &.right:after
+    content: ''
+
+.ss-gif
+  &:before, &.right:after
+    content: ''
+
+.ss-folder
+  &:before, &.right:after
+    content: '📁'
+
+.ss-openfolder
+  &:before, &.right:after
+    content: '📂'
+
+.ss-downloadfolder
+  &:before, &.right:after
+    content: ''
+
+.ss-uploadfolder
+  &:before, &.right:after
+    content: ''
+
+.ss-quote
+  &:before, &.right:after
+    content: '“'
+
+.ss-unquote
+  &:before, &.right:after
+    content: '”'
+
+.ss-print
+  &:before, &.right:after
+    content: '⎙'
+
+.ss-copier
+  &:before, &.right:after
+    content: ''
+
+.ss-fax
+  &:before, &.right:after
+    content: '📠'
+
+.ss-scanner
+  &:before, &.right:after
+    content: ''
+
+.ss-printregistration
+  &:before, &.right:after
+    content: ''
+
+.ss-shredder
+  &:before, &.right:after
+    content: ''
+
+.ss-expand
+  &:before, &.right:after
+    content: '⤢'
+
+.ss-contract
+  &:before, &.right:after
+    content: ''
+
+.ss-help
+  &:before, &.right:after
+    content: '❓'
+
+.ss-info
+  &:before, &.right:after
+    content: 'ℹ'
+
+.ss-alert
+  &:before, &.right:after
+    content: '⚠'
+
+.ss-caution
+  &:before, &.right:after
+    content: '⛔'
+
+.ss-logout
+  &:before, &.right:after
+    content: ''
+
+.ss-login
+  &:before, &.right:after
+    content: ''
+
+.ss-scaleup
+  &:before, &.right:after
+    content: ''
+
+.ss-scaledown
+  &:before, &.right:after
+    content: ''
+
+.ss-plus
+  &:before, &.right:after
+    content: '+'
+
+.ss-hyphen
+  &:before, &.right:after
+    content: '-'
+
+.ss-check
+  &:before, &.right:after
+    content: '✓'
+
+.ss-delete
+  &:before, &.right:after
+    content: '␡'
+
+.ss-notifications
+  &:before, &.right:after
+    content: '🔔'
+
+.ss-notificationsdisabled
+  &:before, &.right:after
+    content: '🔕'
+
+.ss-clock
+  &:before, &.right:after
+    content: '⏲'
+
+.ss-stopwatch
+  &:before, &.right:after
+    content: '⏱'
+
+.ss-alarmclock
+  &:before, &.right:after
+    content: '⏰'
+
+.ss-egg
+  &:before, &.right:after
+    content: ''
+
+.ss-eggs
+  &:before, &.right:after
+    content: ''
+
+.ss-cheese
+  &:before, &.right:after
+    content: ''
+
+.ss-chickenleg
+  &:before, &.right:after
+    content: '🍗'
+
+.ss-pizzapie
+  &:before, &.right:after
+    content: ''
+
+.ss-pizza
+  &:before, &.right:after
+    content: '🍕'
+
+.ss-cheesepizza
+  &:before, &.right:after
+    content: ''
+
+.ss-frenchfries
+  &:before, &.right:after
+    content: '🍟'
+
+.ss-apple
+  &:before, &.right:after
+    content: '🍏'
+
+.ss-carrot
+  &:before, &.right:after
+    content: ''
+
+.ss-broccoli
+  &:before, &.right:after
+    content: ''
+
+.ss-cucumber
+  &:before, &.right:after
+    content: ''
+
+.ss-orange
+  &:before, &.right:after
+    content: '🍊'
+
+.ss-lemon
+  &:before, &.right:after
+    content: '🍋'
+
+.ss-onion
+  &:before, &.right:after
+    content: ''
+
+.ss-bellpepper
+  &:before, &.right:after
+    content: ''
+
+.ss-peas
+  &:before, &.right:after
+    content: ''
+
+.ss-grapes
+  &:before, &.right:after
+    content: '🍇'
+
+.ss-strawberry
+  &:before, &.right:after
+    content: '🍓'
+
+.ss-bread
+  &:before, &.right:after
+    content: '🍞'
+
+.ss-mug
+  &:before, &.right:after
+    content: '☕'
+
+.ss-mugs
+  &:before, &.right:after
+    content: ''
+
+.ss-espresso
+  &:before, &.right:after
+    content: ''
+
+.ss-macchiato
+  &:before, &.right:after
+    content: ''
+
+.ss-cappucino
+  &:before, &.right:after
+    content: ''
+
+.ss-latte
+  &:before, &.right:after
+    content: ''
+
+.ss-icedcoffee
+  &:before, &.right:after
+    content: ''
+
+.ss-coffeebean
+  &:before, &.right:after
+    content: ''
+
+.ss-coffeemilk
+  &:before, &.right:after
+    content: ''
+
+.ss-coffeefoam
+  &:before, &.right:after
+    content: ''
+
+.ss-coffeesugar
+  &:before, &.right:after
+    content: ''
+
+.ss-sugarpackets
+  &:before, &.right:after
+    content: ''
+
+.ss-capsule
+  &:before, &.right:after
+    content: ''
+
+.ss-capsulerecycling
+  &:before, &.right:after
+    content: ''
+
+.ss-insertcapsule
+  &:before, &.right:after
+    content: ''
+
+.ss-tea
+  &:before, &.right:after
+    content: '🍵'
+
+.ss-teabag
+  &:before, &.right:after
+    content: ''
+
+.ss-jug
+  &:before, &.right:after
+    content: ''
+
+.ss-pitcher
+  &:before, &.right:after
+    content: ''
+
+.ss-kettle
+  &:before, &.right:after
+    content: ''
+
+.ss-wineglass
+  &:before, &.right:after
+    content: '🍷'
+
+.ss-sugar
+  &:before, &.right:after
+    content: ''
+
+.ss-oven
+  &:before, &.right:after
+    content: ''
+
+.ss-stove
+  &:before, &.right:after
+    content: ''
+
+.ss-vent
+  &:before, &.right:after
+    content: ''
+
+.ss-exhaust
+  &:before, &.right:after
+    content: ''
+
+.ss-steam
+  &:before, &.right:after
+    content: '♨'
+
+.ss-dishwasher
+  &:before, &.right:after
+    content: ''
+
+.ss-toaster
+  &:before, &.right:after
+    content: ''
+
+.ss-microwave
+  &:before, &.right:after
+    content: ''
+
+.ss-electrickettle
+  &:before, &.right:after
+    content: ''
+
+.ss-refrigerator
+  &:before, &.right:after
+    content: ''
+
+.ss-freezer
+  &:before, &.right:after
+    content: ''
+
+.ss-utensils
+  &:before, &.right:after
+    content: '🍴'
+
+.ss-cookingutensils
+  &:before, &.right:after
+    content: ''
+
+.ss-whisk
+  &:before, &.right:after
+    content: ''
+
+.ss-pizzacutter
+  &:before, &.right:after
+    content: ''
+
+.ss-measuringcup
+  &:before, &.right:after
+    content: ''
+
+.ss-colander
+  &:before, &.right:after
+    content: ''
+
+.ss-eggtimer
+  &:before, &.right:after
+    content: ''
+
+.ss-platter
+  &:before, &.right:after
+    content: ''
+
+.ss-plates
+  &:before, &.right:after
+    content: ''
+
+.ss-steamplate
+  &:before, &.right:after
+    content: ''
+
+.ss-cups
+  &:before, &.right:after
+    content: ''
+
+.ss-steamglass
+  &:before, &.right:after
+    content: ''
+
+.ss-pot
+  &:before, &.right:after
+    content: ''
+
+.ss-steampot
+  &:before, &.right:after
+    content: ''
+
+.ss-chef
+  &:before, &.right:after
+    content: ''
+
+.ss-weathervane
+  &:before, &.right:after
+    content: ''
+
+.ss-thermometer
+  &:before, &.right:after
+    content: ''
+
+.ss-thermometerup
+  &:before, &.right:after
+    content: ''
+
+.ss-thermometerdown
+  &:before, &.right:after
+    content: ''
+
+.ss-droplet
+  &:before, &.right:after
+    content: '💧'
+
+.ss-sunrise
+  &:before, &.right:after
+    content: '🌅'
+
+.ss-sunset
+  &:before, &.right:after
+    content: '🌇'
+
+.ss-sun
+  &:before, &.right:after
+    content: '☀'
+
+.ss-cloud
+  &:before, &.right:after
+    content: '☁'
+
+.ss-clouds
+  &:before, &.right:after
+    content: ''
+
+.ss-partlycloudy
+  &:before, &.right:after
+    content: '⛅'
+
+.ss-rain
+  &:before, &.right:after
+    content: '☔'
+
+.ss-rainheavy
+  &:before, &.right:after
+    content: ''
+
+.ss-lightning
+  &:before, &.right:after
+    content: '☇'
+
+.ss-thunderstorm
+  &:before, &.right:after
+    content: '⛈'
+
+.ss-umbrella
+  &:before, &.right:after
+    content: '☂'
+
+.ss-rainumbrella
+  &:before, &.right:after
+    content: ''
+
+.ss-rainbow
+  &:before, &.right:after
+    content: '🌈'
+
+.ss-rainbowclouds
+  &:before, &.right:after
+    content: ''
+
+.ss-fog
+  &:before, &.right:after
+    content: ''
+
+.ss-wind
+  &:before, &.right:after
+    content: ''
+
+.ss-tornado
+  &:before, &.right:after
+    content: ''
+
+.ss-snowflake
+  &:before, &.right:after
+    content: '❄'
+
+.ss-snowcrystal
+  &:before, &.right:after
+    content: '❆'
+
+.ss-lightsnow
+  &:before, &.right:after
+    content: ''
+
+.ss-snow
+  &:before, &.right:after
+    content: ''
+
+.ss-heavysnow
+  &:before, &.right:after
+    content: ''
+
+.ss-hail
+  &:before, &.right:after
+    content: ''
+
+.ss-crescentmoon
+  &:before, &.right:after
+    content: '🌙'
+
+.ss-waxingcrescentmoon
+  &:before, &.right:after
+    content: '🌒'
+
+.ss-firstquartermoon
+  &:before, &.right:after
+    content: '🌓'
+
+.ss-waxinggibbousmoon
+  &:before, &.right:after
+    content: '🌔'
+
+.ss-waninggibbousmoon
+  &:before, &.right:after
+    content: '🌖'
+
+.ss-lastquartermoon
+  &:before, &.right:after
+    content: '🌗'
+
+.ss-waningcrescentmoon
+  &:before, &.right:after
+    content: '🌘'
+
+.ss-fan
+  &:before, &.right:after
+    content: ''
+
+.ss-bike
+  &:before, &.right:after
+    content: '🚲'
+
+.ss-wheelchair
+  &:before, &.right:after
+    content: '♿'
+
+.ss-briefcase
+  &:before, &.right:after
+    content: '💼'
+
+.ss-hanger
+  &:before, &.right:after
+    content: ''
+
+.ss-comb
+  &:before, &.right:after
+    content: ''
+
+.ss-medicalcross
+  &:before, &.right:after
+    content: ''
+
+.ss-up
+  &:before, &.right:after
+    content: '⬆'
+
+.ss-upright
+  &:before, &.right:after
+    content: '⬈'
+
+.ss-right
+  &:before, &.right:after
+    content: '➡'
+
+.ss-downright
+  &:before, &.right:after
+    content: '⬊'
+
+.ss-down
+  &:before, &.right:after
+    content: '⬇'
+
+.ss-downleft
+  &:before, &.right:after
+    content: '⬋'
+
+.ss-left
+  &:before, &.right:after
+    content: '⬅'
+
+.ss-upleft
+  &:before, &.right:after
+    content: '⬉'
+
+.ss-navigateup
+  &:before, &.right:after
+    content: ''
+
+.ss-navigateright
+  &:before, &.right:after
+    content: '▻'
+
+.ss-navigatedown
+  &:before, &.right:after
+    content: ''
+
+.ss-navigateleft
+  &:before, &.right:after
+    content: '◅'
+
+.ss-retweet
+  &:before, &.right:after
+    content: ''
+
+.ss-share
+  &:before, &.right:after
+    content: ''
