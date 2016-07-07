@@ -1,0 +1,56 @@
+.card
+  position: relative
+
+  h2
+    color: $color-secondary-soft
+    text-transform: uppercase
+    letter-spacing: -1px
+    padding:
+      right: 20px
+
+  .ss-icon
+    color: lighten($color-secondary-soft, 50%)
+    position: absolute
+    top: 20px
+    right: 20px
+    font:
+      size: 3em
+
+  .value
+    color: $color-secondary
+    font:
+      size: 4em
+
+
+  .obs
+    color: $color-secondary-soft
+    font:
+      size: .9em
+    text-align: right
+
+    .label
+      display: inline-block
+      margin:
+        right: 5px
+
+  &.card-icon-sm
+    width: 18.7%
+    height: 200px
+    padding: 20px
+    display: inline-block
+    background:
+      color: $color-soft
+    margin:
+      top: 20px
+      right: 1%
+
+    @media #{$medium-max}
+      width: 23.5%
+
+    @media #{$small-max}
+      width: 48.5%
+
+    @media #{$xsmall-max}
+      width: 100%
+      margin:
+        right: 0
