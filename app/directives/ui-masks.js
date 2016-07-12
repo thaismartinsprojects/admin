@@ -9,7 +9,7 @@ angular.module('adminThaisMartins')
 
             ngModel.$formatters.push(function(value) {
 
-                if(typeof value == 'undefined') return false;
+                if(typeof value == 'undefined') return '';
 
                 if(isDate(value))
                     value = moment(new Date(value)).format('DD/MM/YYYY');
@@ -19,7 +19,7 @@ angular.module('adminThaisMartins')
 
             ngModel.$parsers.push(function(value) {
 
-                if(typeof value == 'undefined') return false;
+                if(typeof value == 'undefined') return '';
                 value = value.toString().replace(/['"R$;:.,*\/?=\\-]/g, '');
 
                 var regexNumber = /^\d+$/;
