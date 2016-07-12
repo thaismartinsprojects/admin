@@ -21,10 +21,17 @@
         margin: 10px 5px
 
       .ref
-        display: none
+        @include transition(all .2s)
+        width: 0
+
+        .name,
+        .category,
+        .status
+          @include transition(all .1s)
+          opacity: 0
 
     .navegation
-      display: none
+      width: 0
 
     ul li a
       padding: 25px 15px
@@ -74,9 +81,17 @@
         min-height: 100%
 
     .ref
+      @include transition(all .8s)
+      overflow: hidden
       width: 120px
       float: left
       color: $color-soft
+
+      .name,
+      .category,
+      .status
+        @include transition(all .4s .4s)
+        opacity: 1
 
       .name
         font:
@@ -111,7 +126,10 @@
           background: red
 
   .navegation
+    @include transition(all .4s)
     color: $color-secondary-soft
+    width: 100%
+    overflow: hidden
     margin: 15px 20px
     text-transform: lowercase
     font:
