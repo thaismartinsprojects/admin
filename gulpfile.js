@@ -5,14 +5,18 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
-    spritesmith = require('gulp.spritesmith');
+    spritesmith = require('gulp.spritesmith'),
+    connect = require('gulp-connect');
 
 var jsFiles = [
     'bower_components/jquery/dist/jquery.min.js',
     'bower_components/angular/angular.min.js',
     'bower_components/angular-ui-router/release/angular-ui-router.min.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'bower_components/angular-ui-mask/dist/mask.min.js'
+    'bower_components/angular-ui-mask/dist/mask.min.js',
+    'bower_components/moment/min/moment-with-locales.min.js',
+    'bower_components/moment/locale/pt-br.js',
+    'bower_components/angular-moment/angular-moment.min.js'
 ];
 
 var cssFiles = [
@@ -34,7 +38,8 @@ gulp.task('styles', function() {
         .on('error', logError)
         .pipe(rename('style.min.css'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('public/css'));
+        .pipe(gulp.dest('public/css'))
+        .pipe(connect.reload());
 });
 
 gulp.task('styles:dependencies', function() {
@@ -63,7 +68,8 @@ gulp.task('scripts', function() {
         .on('error', logError)
         .pipe(rename('app.min.js'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('public/js'));
+        .pipe(gulp.dest('public/js'))
+        .pipe(connect.reload());
 });
 
 gulp.task('scripts:dependencies', function() {
@@ -102,10 +108,20 @@ gulp.task('copy-files', function() {
         .pipe(gulp.dest('dist/app/views'));
     gulp.src('index.html')
         .pipe(gulp.dest('dist'));
+});
 
+gulp.task('html', function () {
+    gulp.src('/app/views/**/*.html')
+        .pipe(connect.reload());
 });
 
 gulp.task('watch', function() {
+
+    connect.server({
+        livereload: true
+    });
+
+    gulp.watch('app/views/**/*.html', ['scripts']);
     gulp.watch('app/**/*.js', ['scripts']);
     gulp.watch('public/sass/**/*.sass', ['styles']);
 });
