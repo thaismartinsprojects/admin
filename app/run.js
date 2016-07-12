@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('adminThaisMartins')
-.run(['$rootScope', 'MenuService', function($rootScope, MenuService) {
+.run(['$rootScope', 'MenuService', 'amMoment', function($rootScope, MenuService, amMoment) {
+
+    amMoment.changeLocale('pt-br');
 
     $rootScope.activeMenu = true;
     $rootScope.menu = MenuService.getItems();

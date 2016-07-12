@@ -2,11 +2,12 @@
 
 angular.module('adminThaisMartins', [
     'ui.router',
-    'ui.mask'
+    'ui.mask',
+    'angularMoment'
 ])
 .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise("/login");
+    $urlRouterProvider.otherwise("/contacts");
 
     $stateProvider
         .state('root', {
@@ -125,6 +126,26 @@ angular.module('adminThaisMartins', [
                 'main@': {
                     templateUrl: 'app/views/works/form.html',
                     controller: 'WorksController'
+                }
+            }
+        })
+        .state('contacts', {
+            url: "/contacts",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/contacts/index.html',
+                    controller: 'ContactsController'
+                }
+            }
+        })
+        .state('contacts.edit', {
+            url: "/contacts/edit/:id",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/contacts/form.html',
+                    controller: 'ContactsController'
                 }
             }
         });

@@ -1,0 +1,45 @@
+<div class="pages" ng-class="{'mobile': activeMenu}">
+    <div class="breadcrumbs">
+        Home / Contatos
+    </div>
+    <div class="col-xs-12">
+        <h1><i class="ss-icon ss-index"></i> Contatos</h1>
+    </div>
+
+    <div class="page col-xs-12">
+        <form name="menuForm" class="form">
+            <div class="form-group col-xs-12">
+                <label for="name">Nome</label>
+                <input type="text" class="form-control" ng-model="contact.name" id="name" readonly>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="phone">Telefone</label>
+                <input type="text" class="form-control" ng-model="contact.phone" id="phone" readonly ui-br-phone-number>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" ng-model="contact.email" id="email" readonly>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="message">Mensagem</label>
+                <textarea class="form-control" ng-model="contact.message" id="message" readonly></textarea>
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="created_at">Enviado em</label>
+                <input type="text" class="form-control" ng-model="contact.created_at" id="created_at" ui-br-date-mask readonly>
+            </div>
+            <div class="footer">
+                <div class="col-xs-12 col-sm-6">
+                    <a ui-sref="contacts" class="btn btn-secondary-fill bt-top">
+                        <span>Voltar</span>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <button class="btn btn-primary-fill">
+                        <span>Salvar</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
