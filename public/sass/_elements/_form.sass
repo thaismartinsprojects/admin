@@ -2,6 +2,46 @@
   width: 100%
   max-width: 600px
 
+  .fake-form-group
+    .label
+      @include transition(all .3s)
+      color: $color-secondary
+      width: 100%
+      display: block
+      font:
+        size: 1em
+        weight: 600
+      text:
+        align: left
+        transform: uppercase
+      margin: 10px
+
+      small
+        text-transform: none
+        color: $color-secondary-soft
+        margin:
+          left: 5px
+        font:
+          size: .8em
+          weight: 400
+
+    .input,
+    .link
+      display: inline-block
+      margin: 10px
+      float: left
+
+    .link
+      cursor: pointer
+      color: $color-primary
+      font:
+        size: .9em
+      text:
+        transform: uppercase
+
+      &:hover
+        color: $color-primary-dark
+
   .form-group
     position: relative
     margin: 10px 0

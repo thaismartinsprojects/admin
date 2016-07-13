@@ -162,6 +162,16 @@ angular.module('adminThaisMartins', [
                     controller: 'MessagesController'
                 }
             }
+        })
+        .state('user', {
+            url: "/user",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/user/index.html',
+                    controller: 'UserController'
+                }
+            }
         });
 
 

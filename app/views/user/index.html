@@ -1,0 +1,45 @@
+<div class="pages" ng-class="{'mobile': activeMenu}">
+    <div class="breadcrumbs">
+        Home / Informações do Usuário
+    </div>
+    <div class="col-xs-12">
+        <h1><i class="ss-icon ss-businessuser"></i> Usuário</h1>
+    </div>
+
+    <div class="page col-xs-12">
+        <form name="menuForm" class="form">
+            <div class="form-group col-xs-12">
+                <label for="name">Nome</label>
+                <input type="text" class="form-control" ng-model="user.name" id="name">
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="user">Usuário</label>
+                <input type="text" class="form-control" ng-model="user.user" id="user">
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" ng-model="user.email" id="email">
+            </div>
+            <div class="fake-form-group col-xs-12" ng-if="!visiblePass">
+                <p class="label">Senha</p>
+                <p class="input">**********</p>
+                <span class="link" ng-click="showPass()">Alterar Senha</span>
+            </div>
+            <div class="form-group col-xs-12" ng-if="visiblePass">
+                <label for="password">Senha</label>
+                <input type="text" class="form-control" ng-model="user.password" id="password">
+            </div>
+            <div class="form-group col-xs-12" ng-if="visiblePass">
+                <label for="confirmPassword">Confirmar Senha</label>
+                <input type="text" class="form-control" ng-model="user.confirmPassword" id="confirmPassword">
+            </div>
+            <div class="footer">
+                <div class="col-xs-12">
+                    <button class="btn btn-primary-fill btn-center">
+                        <span>Atualizar Dados</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

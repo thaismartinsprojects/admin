@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('adminThaisMartins')
-.run(['$rootScope', 'MenuService', 'amMoment', function($rootScope, MenuService, amMoment) {
+.run(['$rootScope', '$state', 'MenuService', 'amMoment', function($rootScope, $state, MenuService, amMoment) {
 
     amMoment.changeLocale('pt-br');
 
@@ -17,6 +17,10 @@ angular.module('adminThaisMartins')
 
     $rootScope.doLogin = function() {
         $rootScope.isLogged = true;
+    };
+
+    $rootScope.goToInfo = function() {
+        $state.go('info');
     };
 
     $rootScope.showMessages = false;
