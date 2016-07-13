@@ -13,7 +13,7 @@ var jsFiles = [
     'bower_components/angular/angular.min.js',
     'bower_components/angular-ui-router/release/angular-ui-router.min.js',
     'bower_components/bootstrap/dist/js/bootstrap.min.js',
-    'bower_components/angular-ui-mask/dist/mask.min.js',
+    'bower_components/angular-input-masks/angular-input-masks-standalone.min.js',
     'bower_components/moment/min/moment-with-locales.min.js',
     'bower_components/moment/locale/pt-br.js',
     'bower_components/angular-moment/angular-moment.min.js'
@@ -111,8 +111,10 @@ gulp.task('copy-files', function() {
 });
 
 gulp.task('html', function () {
-    gulp.src('/app/views/**/*.html')
+
+    gulp.src(['/app/views/**/*.html', '/app/views/**/**/*.html'])
         .pipe(connect.reload());
+
 });
 
 gulp.task('watch', function() {
@@ -121,7 +123,7 @@ gulp.task('watch', function() {
         livereload: true
     });
 
-    gulp.watch('app/views/**/*.html', ['scripts']);
+    gulp.watch(['/app/views/**/*.html', '/app/views/**/**/*.html'], ['html']);
     gulp.watch('app/**/*.js', ['scripts']);
     gulp.watch('public/sass/**/*.sass', ['styles']);
 });

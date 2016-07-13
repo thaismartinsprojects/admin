@@ -9,7 +9,6 @@
             <p class="status"> <span class="online"></span>Online</p>
         </div>
     </div>
-    <p class="navegation">Navegação</p>
     <ul>
         <li ng-repeat="item in menu" data-menuanchor="{{item.slug}}">
             <a ui-sref="{{item.slug}}" ng-if="!item.childs">

@@ -8,30 +8,55 @@
 
     <div class="page col-xs-12">
         <form name="menuForm" class="form">
-            <div class="form-group col-xs-12">
-                <label for="title">Título do Site</label>
-                <input type="text" class="form-control" ng-model="user.title" id="title">
+            <div class="col-xs-12">
+                <h2>Dados do Site</h2>
             </div>
             <div class="form-group col-xs-12">
-                <label for="user">Usuário</label>
-                <input type="text" class="form-control" ng-model="user.user" id="user">
+                <label for="title">Título do Site</label>
+                <input type="text" class="form-control" ng-model="info.title" id="title">
             </div>
             <div class="form-group col-xs-12">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" ng-model="user.email" id="email">
+                <input type="text" class="form-control" ng-model="info.email" id="email">
             </div>
-            <div class="fake-form-group col-xs-12" ng-if="!visiblePass">
-                <p class="label">Senha</p>
-                <p class="input">**********</p>
-                <span class="link" ng-click="showPass()">Alterar Senha</span>
+            <div class="form-group col-xs-12">
+                <label for="phone">Telefone</label>
+                <input type="text" class="form-control" ng-model="info.phone" id="phone" ui-br-phone-number>
             </div>
-            <div class="form-group col-xs-12" ng-if="visiblePass">
-                <label for="password">Senha</label>
-                <input type="text" class="form-control" ng-model="user.password" id="password">
+            <div class="form-group col-xs-12">
+                <label for="logo">Logo</label>
+                <file ng-model="info.logo" id="logo" classes="form-control" type="image/x-png, image/jpeg"></file>
             </div>
-            <div class="form-group col-xs-12" ng-if="visiblePass">
-                <label for="confirmPassword">Confirmar Senha</label>
-                <input type="text" class="form-control" ng-model="user.confirmPassword" id="confirmPassword">
+            <div class="col-xs-12">
+                <h2>Redes Sociais</h2>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label for="facebook"><i class="fa fa-facebook"></i> Facebook</label>
+                <input type="text" class="form-control" ng-model="info.social.facebook" id="facebook">
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label for="twitter"><i class="fa fa-twitter"></i> Twitter</label>
+                <input type="text" class="form-control" ng-model="info.social.twitter" id="twitter">
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label for="googleplus"><i class="fa fa-google-plus"></i> Google Plus</label>
+                <input type="text" class="form-control" ng-model="info.social.googleplus" id="googleplus">
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label for="twitter"><i class="fa fa-pinterest"></i> Pinterest</label>
+                <input type="text" class="form-control" ng-model="info.social.pinterest" id="pinterest">
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label for="tumblr"><i class="fa fa-tumblr"></i> Tumblr</label>
+                <input type="text" class="form-control" ng-model="info.social.tumblr" id="tumblr">
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label for="github"><i class="fa fa-github"></i> GitHub</label>
+                <input type="text" class="form-control" ng-model="info.social.github" id="github">
+            </div>
+            <div class="form-group col-xs-12 col-sm-6">
+                <label for="bitbucket"><i class="fa fa-bitbucket"></i> BitBucket</label>
+                <input type="text" class="form-control" ng-model="info.social.bitbucket" id="bitbucket">
             </div>
             <div class="footer">
                 <div class="col-xs-12">

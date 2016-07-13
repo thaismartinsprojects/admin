@@ -2,7 +2,7 @@
 
 angular.module('adminThaisMartins', [
     'ui.router',
-    'ui.mask',
+    'ui.utils.masks',
     'angularMoment'
 ])
 .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $stateProvider, $urlRouterProvider) {
@@ -183,7 +183,6 @@ angular.module('adminThaisMartins', [
                 }
             }
         });
-
 
     // $locationProvider.html5Mode(true);
 }]);
