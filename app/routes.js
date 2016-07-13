@@ -172,6 +172,16 @@ angular.module('adminThaisMartins', [
                     controller: 'UserController'
                 }
             }
+        })
+        .state('info', {
+            url: "/info",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/info/index.html',
+                    controller: 'InfoController'
+                }
+            }
         });
 
 

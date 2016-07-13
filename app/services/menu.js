@@ -10,8 +10,9 @@ angular.module('adminThaisMartins')
             {id: 1, name: 'Categorias', icon: 'rows', slug: 'skills.categories'},
             {id: 2, name: 'Items', icon: 'quote', slug: 'skills.items'}
         ]},
-        {id: 4, name: 'Trabalhos', icon: 'laptop', slug: 'works', childs: null},
-        {id: 5, name: 'Contatos', icon: 'mail', slug: 'contacts', childs: null}
+        {id: 4, name: 'Trabalhos', icon: 'briefcase', slug: 'works', childs: null},
+        {id: 5, name: 'Contatos', icon: 'mail', slug: 'contacts', childs: null},
+        {id: 6, name: 'Informações do Site', icon: 'desktop', slug: 'info', childs: null}
     ];
 
     return {
