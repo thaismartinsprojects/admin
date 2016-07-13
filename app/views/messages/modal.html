@@ -1,0 +1,44 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="messages">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="dismiss" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="ss-icon ss-delete"></span>
+                </button>
+                <h4 class="modal-title"><i class="ss-icon ss-chat"></i> Thais Martins</h4>
+            </div>
+            <div class="modal-body">
+                <div class="chat">
+                    <ul class="talks">
+                        <li class="talk other">
+                            <div class="image">
+                                <img src="public/images/user.png" alt="Usuário" title="Usuário">
+                            </div>
+                            <div class="text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor..</p>
+                                <small><i class="fa fa-clock-o"></i> a 45min</small>
+                            </div>
+                        </li>
+                        <li class="talk myself">
+                            <div class="image">
+                                <img src="public/images/user.png" alt="Usuário" title="Usuário">
+                            </div>
+                            <div class="text">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor..</p>
+                                <small><i class="fa fa-clock-o"></i> a 45min</small>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="input">
+                    <textarea ng-model="message" class="form-textarea" placeholder="Digite sua mensagem aqui..." ng-enter="sendMessage()"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary-fill btn-center" data-dismiss="modal">
+                    <span>Fechar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

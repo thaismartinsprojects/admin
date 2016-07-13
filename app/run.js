@@ -25,4 +25,15 @@ angular.module('adminThaisMartins')
         $rootScope.showMessages = !$rootScope.showMessages;
     };
 
+    // OnChange page set header style and close menues
+    $rootScope.$on('$stateChangeSuccess', function(){
+
+        // if(typeof $rootScope.isLogged == 'undefined')
+        //     $rootScope.isLogged = true;
+
+        // $rootScope.headerDark = $state.current.headerDark;
+        // $rootScope.showSideMenu = false;
+        // $rootScope.showCategoriesMenu = false;
+        $rootScope.showMessages = false;
+    });
 }]);

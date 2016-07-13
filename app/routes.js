@@ -7,7 +7,7 @@ angular.module('adminThaisMartins', [
 ])
 .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise("/contacts");
+    $urlRouterProvider.otherwise("/dashboard");
 
     $stateProvider
         .state('root', {
@@ -146,6 +146,20 @@ angular.module('adminThaisMartins', [
                 'main@': {
                     templateUrl: 'app/views/contacts/form.html',
                     controller: 'ContactsController'
+                }
+            }
+        })
+        .state('messages', {
+            url: "/messages",
+            parent: 'root',
+            views: {
+                'main@': {
+                    templateUrl: 'app/views/messages/index.html',
+                    controller: 'MessagesController'
+                },
+                'modal@messages': {
+                    templateUrl: 'app/views/messages/modal.html',
+                    controller: 'MessagesController'
                 }
             }
         });

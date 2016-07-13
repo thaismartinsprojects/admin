@@ -1,0 +1,100 @@
+.chat
+  @include border-radius(15px)
+  padding: 20px 0
+  background:
+    color: $color-gray
+
+  .talks
+    background:
+      color: transparent
+
+    .talk
+      position: relative
+      padding: 15px
+
+      &.other
+        .image
+          left: 0
+
+        .text
+          margin:
+            left:  110px
+          &:after
+            border-width: 7px 16px 7px 0
+            left: -15px
+
+          &:before
+            border-width: 8px 17px 8px 0
+            left: -17px
+
+      &.myself
+        .image
+          right: 0
+
+        .text
+          margin:
+            right:  110px
+
+          &:after
+            border-width: 7px 0 7px 16px
+            right: -15px
+
+          &:before
+            border-width: 8px 0 8px 17px
+            right: -17px
+
+
+      .image
+        @include border-radius(50%)
+        position: absolute
+        width: 80px
+        height: 80px
+        margin: auto 25px
+        top: 0
+        bottom: 0
+        overflow: hidden
+        display: block
+
+        img
+          width: 100%
+          min-height: 100%
+
+      .text
+        @include border-radius(10px)
+        padding: 20px
+        position: relative
+        min-height: 80px
+        background:
+          color: $color-gray-soft
+        border: $color-gray-dark solid 1px
+        font:
+          size: 1em
+
+        small
+          position: absolute
+          font:
+            size: .8em
+            weight: 800
+          color: #99A1A4
+          bottom: 10px
+          right: 10px
+
+        &:after
+          content: ''
+          position: absolute
+          border-style: solid
+          border-color: transparent $color-gray-soft
+          display: block
+          width: 0
+          z-index: 1
+          top: 35px
+
+        &:before
+          content: ''
+          position: absolute
+          border-style: solid
+          border-color: transparent $color-gray-dark
+          display: block
+          width: 0
+          z-index: 0
+          top: 34px

@@ -1,17 +1,22 @@
 .messages
-  @include transition(all .4s)
-  width: 0
-  position: absolute
-  right: 101px
-  top: -650px
   color: $color-dark
   overflow: hidden
   z-index: -1
   background:
     color: $color-soft
 
-  @media #{$xsmall-max}
-    right: 0
+  &.messages-header
+    @include transition(all .4s)
+    width: 0
+    position: absolute
+    right: 101px
+    top: -650px
+
+    @media #{$xsmall-max}
+      right: 0
+
+    .text
+      width: 160px
 
   &.active
     @include transition(all .4s)
@@ -21,9 +26,11 @@
     @media #{$xsmall-max}
       width: 100%
 
-  li
+  .message
     width: 100%
     height: 100%
+    display: block
+    overflow: hidden
 
     &.not-read
       a
@@ -44,61 +51,60 @@
         background:
           color: $color-gray-dark
 
-      .image
-        @include border-radius(50%)
-        width: 50px
-        height: 50px
-        margin: 10px 15px
-        float: left
-        overflow: hidden
-        display: block
+    .image
+      @include border-radius(50%)
+      width: 50px
+      height: 50px
+      margin: 10px 15px
+      float: left
+      overflow: hidden
+      display: block
 
-        img
-          width: 100%
-          min-height: 100%
+      img
+        width: 100%
+        min-height: 100%
 
-      .message
-        position: relative
-        width: 160px
-        float: left
-        padding: 10px
-        font:
-          size: .8em
-
-        @media #{$xsmall-max}
-          width: 70%
-
-        p
-          color: $color-dark
-          line-height: 1.2em
-
-        small
-          position: absolute
-          right: 0
-          bottom: 10px
-          font:
-            size: .8em
-            weight: 800
-          color: #99A1A4
-
-    &.see-all
-      padding: 0
-      clear: both
-      text:
-        transform: uppercase
-        align: center
+    .text
+      position: relative
+      float: left
+      padding: 10px
       font:
         size: .8em
-        weight: 800
 
-      a
-        width: 100%
-        padding: 20px
+      @media #{$xsmall-max}
+        width: 70%
+
+      p
+        color: $color-dark
+        line-height: 1.2em
+
+      small
+        position: absolute
+        right: 0
+        bottom: 0
+        font:
+          size: .8em
+          weight: 800
+        color: #99A1A4
+
+  .see-all
+    padding: 0
+    clear: both
+    text:
+      transform: uppercase
+      align: center
+    font:
+      size: .8em
+      weight: 800
+
+    a
+      width: 100%
+      padding: 20px
+      background:
+        color: #A1ACB0
+      color: $color-soft
+      display: block
+
+      &:hover
         background:
-          color: #A1ACB0
-        color: $color-soft
-        display: block
-
-        &:hover
-          background:
-            color: $color-secondary
+          color: $color-secondary
