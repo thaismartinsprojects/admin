@@ -19,8 +19,8 @@ angular.module('adminThaisMartins')
         $rootScope.isLogged = true;
     };
 
-    $rootScope.goToInfo = function() {
-        $state.go('info');
+    $rootScope.goToUser = function() {
+        $state.go('user');
     };
 
     $rootScope.showMessages = false;
