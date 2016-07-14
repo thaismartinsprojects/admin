@@ -9,6 +9,9 @@ angular.module('adminThaisMartins')
     return {
         getAll: function() {
             return $http.get(apiUrl);
+        },
+        create: function(message) {
+            return $http.post(apiUrl, message);
         }
     };
 }]);
