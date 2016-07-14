@@ -5,7 +5,7 @@
   overflow: hidden
   position: relative
   background:
-    color: $color-gray
+    color: lighten($color-gray, 3%)
   border: 1px solid $color-gray
 
   .conversation
@@ -13,6 +13,29 @@
     position: relative
     width: 70%
     height: 500px
+
+    .noresults
+      position: absolute
+      text-align: center
+      width: 60%
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      margin: auto
+      height: 180px
+
+      i
+        color: $color-primary
+        margin:
+          bottom: 40px
+        font:
+          size: 8em
+
+      p
+        color: darken($color-gray-dark, 20%)
+        font:
+          size: 1.6em
 
     .title
       width: 100%

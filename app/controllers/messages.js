@@ -1,55 +1,47 @@
 'use strict';
 
 angular.module('adminThaisMartins')
-.controller('MessagesController', ['$scope', 'MessageService', function ($scope, MessageService) {
+.controller('MessagesController', ['$scope', '$filter', 'UserService', 'MessageService', function ($scope, $filter, UserService, MessageService) {
 
     $scope.visibleSearch = false;
-    $scope.message = null;
+    $scope.search = {};
 
+    $scope.users = [];
+    $scope.messages = [];
     $scope.current = {};
-    $scope.current.messages = MessageService.getAll();
-    $scope.current.user = {
-        name: "Thais Martins"
-    };
+    $scope.text = '';
 
-    var scrollChat = function() {
-        var box = document.getElementById('talks');
-        $('#talks-box').animate({scrollTop: box.scrollHeight}, 500);
-    };
+    $scope.code = UserService.getCode();
 
-    setTimeout(scrollChat, 1000);
+    UserService.getAll()
+        .then(function(response) {
+            angular.forEach(response.data, function(user) {
+                if(user._id != UserService.getCode())
+                    $scope.users.push(user);
+            });
+            return MessageService.getAll();
+        })
+        .then(function(response) {
+            angular.forEach($scope.users, function(user) {
+                var userMessages = $filter('filter')(response.data, {'to': $scope.code, 'from': user._id});
+                var myMessages = $filter('filter')(response.data, {'to': user._id, 'from': $scope.code});
+                $scope.messages[user._id] = {
+                    messages: myMessages.concat(userMessages),
+                    user: user
+                };
+            });
+        });
 
-    $scope.openNewMessage = function() {
-        angular.element('#messages').modal({backdrop: 'static', keyboard: false});
-    };
-
-    $scope.openMessage = function() {
-        angular.element('#messages').modal({backdrop: 'static', keyboard: false});
+    $scope.scrollChat = function() {
+        setTimeout(function() {
+            var box = document.getElementById('talks');
+            $('#talks-box').animate({scrollTop: box.scrollHeight}, 100);
+        }, 300);
     };
 
     $scope.showConversation = function(userId) {
-
-        console.log('Entrou');
-        $scope.current.messages = null;
-        $scope.current.user = {
-            name: "Thais Martins " + userId
-        };
-    };
-
-    $scope.sendMessage = function() {
-
-        if(!$scope.message) return false;
-
-        $scope.current.messages.push({
-            'message': $scope.message,
-            'created': new Date
-        });
-
-        $scope.message = '';
-        scrollChat();
-    };
-
-    $scope.showSearch = function() {
-        $scope.visibleSearch = !$scope.visibleSearch;
+        $scope.current.messages = $scope.messages[userId].messages;
+        $scope.current.user = $scope.messages[userId].user;
+        $scope.scrollChat();
     };
 }]);

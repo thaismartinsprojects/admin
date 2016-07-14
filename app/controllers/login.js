@@ -14,7 +14,8 @@ angular.module('adminThaisMartins')
 
         UserService.doLogin($scope.login)
             .then(function(response) {
-                localStorage.setItem('code', response.data.content.token);
+                localStorage.setItem('token', response.data.content.token);
+                localStorage.setItem('code', response.data.content.code);
                 $state.go('dashboard');
             }, function(response) {
                 $scope.error = 'Por favor, verifique os dados digitados e tente novamente.';

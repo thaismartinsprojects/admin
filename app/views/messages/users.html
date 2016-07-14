@@ -3,28 +3,14 @@
         <input type="text" ng-model="search.name" placeholder="Com qual usuário deseja conversar?">
     </div>
     <ul class="people">
-        <li class="person" ng-click="showConversation(1)">
+        <li ng-repeat="user in users | filter:{name: search.name}" class="person" ng-click="showConversation(user._id)">
             <div class="image">
                 <img src="public/images/user.png" alt="Usuário" title="Usuário">
             </div>
             <div class="text">
-                <p class="name">Thais Martins</p>
-                <p class="group">Administrador</p>
-                <small> a 45min</small>
-            </div>
-            <div class="delete">
-                <i class="ss-icon ss-trash"></i>
-                <span>excluir conversa</span>
-            </div>
-        </li>
-        <li class="person" ng-click="showConversation(2)">
-            <div class="image">
-                <img src="public/images/user.png" alt="Usuário" title="Usuário">
-            </div>
-            <div class="text">
-                <p class="name">Thais Martins</p>
-                <p class="group">Administrador</p>
-                <small><i class="fa fa-clock-o"></i> a 45min</small>
+                <p class="name">{{user.name}}</p>
+                <p class="group">{{user.email}}</p>
+                <p class="group">{{user.group.title}}</p>
             </div>
             <div class="delete">
                 <i class="ss-icon ss-trash"></i>

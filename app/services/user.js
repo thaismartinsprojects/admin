@@ -8,13 +8,19 @@ angular.module('adminThaisMartins')
 
     return {
         isLogged: function() {
-           return localStorage.getItem('code') ? true : false;
+           return localStorage.getItem('token') ? true : false;
         },
         doLogout: function() {
-            localStorage.removeItem('code');
+            localStorage.removeItem('token');
         },
         doLogin: function(login) {
             return $http.post(apiUrl + '/auth', login);
+        },
+        getToken: function() {
+            return localStorage.getItem('token');
+        },
+        getCode: function() {
+            return localStorage.getItem('code');
         },
         getAll: function() {
             return $http.get(apiUrl);

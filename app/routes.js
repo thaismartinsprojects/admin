@@ -172,7 +172,8 @@ angular.module('adminThaisMartins', [
                     controller: 'MessagesController'
                 },
                 'conversation@messages': {
-                    templateUrl: 'app/views/messages/conversation.html'
+                    templateUrl: 'app/views/messages/conversation.html',
+                    controller: 'MessagesConversationController'
                 },
                 'users@messages': {
                     templateUrl: 'app/views/messages/users.html'
