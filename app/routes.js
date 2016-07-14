@@ -19,6 +19,7 @@ angular.module('adminThaisMartins', [
         })
         .state('login', {
             url: "/login",
+            requiredLogin: false,
             views: {
                 'main@': {
                     templateUrl: 'app/views/login/index.html',
@@ -29,6 +30,7 @@ angular.module('adminThaisMartins', [
         .state('dashboard', {
             url: "/dashboard",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/dashboard/index.html',
@@ -39,6 +41,7 @@ angular.module('adminThaisMartins', [
         .state('menus', {
             url: "/menus",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/menus/index.html',
@@ -49,6 +52,7 @@ angular.module('adminThaisMartins', [
         .state('menus.add', {
             url: "/menus/new",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/menus/form.html',
@@ -59,6 +63,7 @@ angular.module('adminThaisMartins', [
         .state('menus.edit', {
             url: "/menus/edit/:id",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/menus/form.html',
@@ -72,6 +77,7 @@ angular.module('adminThaisMartins', [
         .state('skills.categories', {
             url: "/skills",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/skills/categories/index.html',
@@ -82,6 +88,7 @@ angular.module('adminThaisMartins', [
         .state('skills.categories.add', {
             url: "/skills/new",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/skills/categories/form.html',
@@ -92,6 +99,7 @@ angular.module('adminThaisMartins', [
         .state('skills.items', {
             url: "/skills/items",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/skills/items/index.html',
@@ -102,6 +110,7 @@ angular.module('adminThaisMartins', [
         .state('skills.items.add', {
             url: "/skills/items/new",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/skills/items/form.html',
@@ -112,6 +121,7 @@ angular.module('adminThaisMartins', [
         .state('works', {
             url: "/works",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/works/index.html',
@@ -122,6 +132,7 @@ angular.module('adminThaisMartins', [
         .state('works.add', {
             url: "/works/new",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/works/form.html',
@@ -132,6 +143,7 @@ angular.module('adminThaisMartins', [
         .state('contacts', {
             url: "/contacts",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/contacts/index.html',
@@ -142,6 +154,7 @@ angular.module('adminThaisMartins', [
         .state('contacts.edit', {
             url: "/contacts/edit/:id",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/contacts/form.html',
@@ -152,6 +165,7 @@ angular.module('adminThaisMartins', [
         .state('messages', {
             url: "/messages",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/messages/index.html',
@@ -168,6 +182,7 @@ angular.module('adminThaisMartins', [
         .state('user', {
             url: "/user",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/user/index.html',
@@ -178,6 +193,7 @@ angular.module('adminThaisMartins', [
         .state('info', {
             url: "/info",
             parent: 'root',
+            requiredLogin: true,
             views: {
                 'main@': {
                     templateUrl: 'app/views/info/index.html',
