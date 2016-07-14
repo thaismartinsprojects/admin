@@ -7,8 +7,6 @@
   background:
     color: $color-gray
   border: 1px solid $color-gray
-  padding:
-    bottom: 120px
 
   .conversation
     float: left
@@ -134,94 +132,98 @@
         font:
           size: 1em
 
-    .talks
-      width: 95%
-      margin: auto
-      background:
-        color: transparent
+    #talks-box
+      overflow-y: auto
+      height: 260px
 
-      .talk
-        position: relative
-        margin: 15px 10px
-        color: lighten($color-dark, 10%)
+      .talks
+        width: 95%
+        margin: auto
+        background:
+          color: transparent
 
-        &.other
-          .image
-            left: 0
+        .talk
+          position: relative
+          margin: 15px 10px
+          color: lighten($color-dark, 10%)
+
+          &.other
+            .image
+              left: 0
+
+            .text
+              background:
+                color: $color-gray-soft
+              border: 1px solid $color-gray-dark
+              margin:
+                right:  110px
+                left: 10px
+
+              &:after
+                border-color: transparent $color-gray-soft
+                border-width: 7px 16px 7px 0
+                left: -15px
+
+              &:before
+                border-color: transparent $color-gray-dark
+                border-width: 8px 17px 8px 0
+                left: -17px
+
+          &.myself
+            .image
+              right: 0
+
+            .text
+              background:
+                color: $color-blue-soft
+              border: 1px solid $color-gray-dark
+              margin:
+                left:  110px
+                right: 10px
+
+              &:after
+                border-color: transparent $color-blue-soft
+                border-width: 7px 0 7px 16px
+                right: -15px
+
+              &:before
+                border-color: transparent $color-gray-dark
+                border-width: 8px 0 8px 17px
+                right: -17px
 
           .text
-            background:
-              color: $color-gray-soft
-            border: 1px solid $color-gray-dark
-            margin:
-              right:  110px
-              left: 10px
+            @include border-radius(10px)
+            padding: 20px
+            position: relative
+            min-height: 80px
+            font:
+              size: 1em
 
-            &:after
-              border-color: transparent $color-gray-soft
-              border-width: 7px 16px 7px 0
-              left: -15px
-
-            &:before
-              border-color: transparent $color-gray-dark
-              border-width: 8px 17px 8px 0
-              left: -17px
-
-        &.myself
-          .image
-            right: 0
-
-          .text
-            background:
-              color: $color-blue-soft
-            border: 1px solid $color-gray-dark
-            margin:
-              left:  110px
+            small
+              position: absolute
+              font:
+                size: .8em
+              color: lighten($color-dark, 40%)
+              bottom: 10px
               right: 10px
 
             &:after
-              border-color: transparent $color-blue-soft
-              border-width: 7px 0 7px 16px
-              right: -15px
+              content: ''
+              position: absolute
+              border-style: solid
+              display: block
+              width: 0
+              z-index: 1
+              top: 35px
 
             &:before
-              border-color: transparent $color-gray-dark
-              border-width: 8px 0 8px 17px
-              right: -17px
-
-        .text
-          @include border-radius(10px)
-          padding: 20px
-          position: relative
-          min-height: 80px
-          font:
-            size: 1em
-
-          small
-            position: absolute
-            font:
-              size: .8em
-            color: lighten($color-dark, 40%)
-            bottom: 10px
-            right: 10px
-
-          &:after
-            content: ''
-            position: absolute
-            border-style: solid
-            display: block
-            width: 0
-            z-index: 1
-            top: 35px
-
-          &:before
-            content: ''
-            position: absolute
-            border-style: solid
-            display: block
-            width: 0
-            z-index: 0
-            top: 34px
+              content: ''
+              position: absolute
+              border-style: solid
+              display: block
+              width: 0
+              z-index: 0
+              top: 34px
 
   .users
     position: relative

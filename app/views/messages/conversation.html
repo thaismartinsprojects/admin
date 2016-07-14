@@ -13,25 +13,21 @@
                 <i class="ss-icon ss-search"></i>
             </button>
             <div class="search" ng-class="{'active': visibleSearch, 'not-active': !visibleSearch}">
-                <input type="text" ng-model="search.message" placeholder="Procurar por palavras-chaves da mensagem">
+                <input type="text" ng-model="search.message" placeholder="Procurar por palavras-chaves nesta conversa...">
             </div>
         </div>
     </div>
-    <ul class="talks">
-        <li class="talk other">
-            <div class="text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor..</p>
-                <small><i class="fa fa-clock-o"></i> a 45min</small>
-            </div>
-        </li>
-        <li class="talk myself">
-            <div class="text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor..</p>
-                <small><i class="fa fa-clock-o"></i> a 45min</small>
-            </div>
-        </li>
-    </ul>
+    <div id="talks-box">
+        <ul class="talks" id="talks">
+            <li class="talk" ng-repeat="message in $parent.current.messages" ng-class="{'myself': $index % 2 == 0, 'other': $index % 2 != 0}">
+                <div class="text">
+                    <p>{{message.message}}</p>
+                    <small><i class="fa fa-clock-o"></i> {{message.created | dateTimeBr}}</small>
+                </div>
+            </li>
+        </ul>
+    </div>
     <div class="input">
-        <textarea ng-model="message" class="form-textarea" placeholder="Digite sua mensagem aqui..." ng-enter="sendMessage()"></textarea>
+        <textarea ng-model="$parent.message" class="form-textarea" placeholder="Digite sua mensagem aqui..." ng-enter="sendMessage()"></textarea>
     </div>
 </div>
