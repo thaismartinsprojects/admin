@@ -1,80 +1,8 @@
 <div class="pages" ng-class="{'mobile': activeMenu}">
     <div class="page col-xs-12">
         <div class="chat">
-            <div class="conversation">
-                <div class="title">
-                    <div class="col-xs-6">
-                        <div class="image">
-                            <img src="public/images/user.png" alt="Usuário" title="Usuário">
-                        </div>
-                        <p class="name">Thais Martins</p>
-                        <p class="group">Administrador</p>
-                        <p class="status"><span class="online"></span> online</p>
-                    </div>
-                    <div class="col-xs-6">
-                        <button class="btn btn-primary-fill btn-circle btn-small pull-right" ng-click="showSearch()">
-                            <i class="ss-icon ss-search"></i>
-                        </button>
-                        <div class="search" ng-class="{'active': visibleSearch, 'not-active': !visibleSearch}">
-                            <input type="text" ng-model="search.message" placeholder="Procurar por palavras-chaves da mensagem">
-                        </div>
-                    </div>
-                </div>
-                <ul class="talks">
-                    <li class="talk other">
-                        <div class="text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor..</p>
-                            <small><i class="fa fa-clock-o"></i> a 45min</small>
-                        </div>
-                    </li>
-                    <li class="talk myself">
-                        <div class="text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor..</p>
-                            <small><i class="fa fa-clock-o"></i> a 45min</small>
-                        </div>
-                    </li>
-                </ul>
-                <div class="input">
-                    <textarea ng-model="message" class="form-textarea" placeholder="Digite sua mensagem aqui..." ng-enter="sendMessage()"></textarea>
-                </div>
-            </div>
-            <div class="users">
-                <div class="search">
-                    <input type="text" ng-model="search.name" placeholder="Com qual usuário deseja conversar?">
-                </div>
-                <ul class="people">
-                    <li class="person">
-                        <div class="image">
-                            <img src="public/images/user.png" alt="Usuário" title="Usuário">
-                        </div>
-                        <div class="text">
-                            <p class="name">Thais Martins</p>
-                            <p class="group">Administrador</p>
-                            <small> a 45min</small>
-                        </div>
-                        <div class="delete">
-                            <i class="ss-icon ss-trash"></i>
-                            <span>excluir conversa</span>
-                        </div>
-                    </li>
-                    <li class="person">
-                        <div class="image">
-                            <img src="public/images/user.png" alt="Usuário" title="Usuário">
-                        </div>
-                        <div class="text">
-                            <p class="name">Thais Martins</p>
-                            <p class="group">Administrador</p>
-                            <small><i class="fa fa-clock-o"></i> a 45min</small>
-                        </div>
-                        <div class="delete">
-                            <i class="ss-icon ss-trash"></i>
-                            <span>excluir conversa</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <div ui-view="conversation"></div>
+            <div ui-view="users"></div>
         </div>
     </div>
 </div>
-
-<div ui-view="modal"></div>

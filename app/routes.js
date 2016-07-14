@@ -67,7 +67,7 @@ angular.module('adminThaisMartins', [
             }
         })
         .state('skills', {
-            parent: 'root',
+            parent: 'root'
         })
         .state('skills.categories', {
             url: "/skills",
@@ -157,8 +157,12 @@ angular.module('adminThaisMartins', [
                     templateUrl: 'app/views/messages/index.html',
                     controller: 'MessagesController'
                 },
-                'modal@messages': {
-                    templateUrl: 'app/views/messages/modal.html',
+                'conversation@messages': {
+                    templateUrl: 'app/views/messages/conversation.html',
+                    controller: 'MessagesController'
+                },
+                'users@messages': {
+                    templateUrl: 'app/views/messages/users.html',
                     controller: 'MessagesController'
                 }
             }
