@@ -1,7 +1,23 @@
 'use strict';
 
 angular.module('adminThaisMartins')
-.controller('LoginController', ['$scope', function ($scope) {
+.controller('LoginController', ['$scope', '$state', 'ValidateService', 'UserService', function ($scope, $state, ValidateService, UserService) {
+    $scope.doLogin = function() {
 
+        $scope.error = false;
+        if(!$scope.login
+            || ValidateService.isEmpty($scope.login.user)
+                || ValidateService.isEmpty($scope.login.password)) {
+            $scope.error = 'Por favor, preencha todos os dados.';
+            return false
+        }
 
+        UserService.doLogin($scope.login)
+            .then(function(response) {
+                localStorage.setItem('code', response.data.content.token);
+                $state.go('dashboard');
+            }, function(response) {
+                $scope.error = 'Por favor, verifique os dados digitados e tente novamente.';
+            });
+    };
 }]);

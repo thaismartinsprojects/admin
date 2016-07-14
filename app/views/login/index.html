@@ -1,5 +1,11 @@
 <div id="login">
     <div class="box box-small">
+        <div class="alert-error" role="alert" ng-if="error">
+            <div class="label">
+                <i class="ss-icon ss-alert"></i>
+            </div>
+           <span><strong>ERRO:</strong> {{error}}</span>
+        </div>
         <h1 >painel<strong>admin</strong> <span class="dot"></span></h1>
         <h2>Seja bem vindo!</h2>
         <p>Faça login para acessar sua conta.</p>
@@ -8,9 +14,9 @@
                 <label for="user">Usuário</label>
                 <input type="text" ng-model="login.user" id="user">
             </div>
-            <div class="form-group" ng-class="{'active': login.pass}">
+            <div class="form-group" ng-class="{'active': login.password}">
                 <label for="pass">Senha</label>
-                <input type="password" ng-model="login.pass" id="pass">
+                <input type="password" ng-model="login.password" id="pass">
             </div>
             <button class="btn btn-primary-fill btn-center btn-medium" ng-click="doLogin()">
                 <span>Entrar</span>

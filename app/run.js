@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('adminThaisMartins')
-.run(['$rootScope', '$state', 'MenuService', 'amMoment', function($rootScope, $state, MenuService, amMoment) {
+.run(['$rootScope', '$state', 'amMoment', 'MenuService', 'UserService', function($rootScope, $state, amMoment, MenuService, UserService) {
 
     amMoment.changeLocale('pt-br');
 
@@ -13,10 +13,11 @@ angular.module('adminThaisMartins')
     };
 
     $rootScope.openModal = false;
-    $rootScope.isLogged = false;
-
-    $rootScope.doLogin = function() {
-        $rootScope.isLogged = true;
+    $rootScope.isLogged = UserService.isLogged();
+    console.log('ok: ' + $rootScope.isLogged);
+    $rootScope.doLogout = function() {
+        UserService.doLogout();
+        $state.go('login');
     };
 
     $rootScope.goToUser = function() {
@@ -40,4 +41,7 @@ angular.module('adminThaisMartins')
         // $rootScope.showCategoriesMenu = false;
         $rootScope.showMessages = false;
     });
-}]);
+}])
+.constant('URI', {
+    'API': 'http://localhost:3000/api'
+});
