@@ -34,13 +34,13 @@
       width: 0
 
     ul li a
-      padding: 25px 15px
+      padding: 21px 15px
 
       span
         display: none
 
       i
-        top: 18px
+        top: 15px
 
   .user
     width: 100%
@@ -113,7 +113,6 @@
         text-transform: lowercase
         font:
           size: .7em
-          style: italic
 
         .online,
         .offline
@@ -168,11 +167,14 @@
           weight: 600
 
         &:hover
-          @include transition(background .4s)
           background:
             color: $color-gray-dark
 
+          i
+            opacity:  1
+
         i
+          @include transition(all .4s)
           position: absolute
           width: 20px
           text-align: center

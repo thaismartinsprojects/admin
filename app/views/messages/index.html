@@ -1,75 +1,79 @@
 <div class="pages" ng-class="{'mobile': activeMenu}">
-    <div class="breadcrumbs">
-        Home / Mensagens
-    </div>
-    <div class="col-xs-12 col-sm-6">
-        <h1><i class="ss-icon ss-chat"></i> Mensagens</h1>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-        <button class="btn btn-primary-fill btn-top pull-right" ng-click="openNewMessage()">
-            <i class="ss-icon ss-compose right"></i>
-            <span>Criar Nova Mensagem</span>
-        </button>
-    </div>
-
     <div class="page col-xs-12">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th width="3%">
-                        <input type="checkbox">
-                    </th>
-                    <th width="3%">#</th>
-                    <th width="27%">Nome</th>
-                    <th width="50%">Nome</th>
-                    <th width="20%">Interações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>1</td>
-                    <td><a ui-sref="/">Home</a></td>
-                    <td><a ui-sref="/">Lorem ipsum....</a></td>
-                    <td>
-                        <button class="btn btn-secondary-fill btn-xsmall btn-circle" ng-click="openMessage()">
-                            <i class="ss-icon ss-compose"></i>
+        <div class="chat">
+            <div class="conversation">
+                <div class="title">
+                    <div class="col-xs-6">
+                        <div class="image">
+                            <img src="public/images/user.png" alt="Usuário" title="Usuário">
+                        </div>
+                        <p class="name">Thais Martins</p>
+                        <p class="group">Administrador</p>
+                        <p class="status"><span class="online"></span> online</p>
+                    </div>
+                    <div class="col-xs-6">
+                        <button class="btn btn-primary-fill btn-circle btn-small pull-right" ng-click="showSearch()">
+                            <i class="ss-icon ss-search"></i>
                         </button>
-                        <button class="btn btn-secondary-fill btn-xsmall btn-circle">
+                        <div class="search" ng-class="{'active': visibleSearch, 'not-active': !visibleSearch}">
+                            <input type="text" ng-model="search.message" placeholder="Procurar por palavras-chaves da mensagem">
+                        </div>
+                    </div>
+                </div>
+                <ul class="talks">
+                    <li class="talk other">
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor..</p>
+                            <small><i class="fa fa-clock-o"></i> a 45min</small>
+                        </div>
+                    </li>
+                    <li class="talk myself">
+                        <div class="text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat tincidunt dolor..</p>
+                            <small><i class="fa fa-clock-o"></i> a 45min</small>
+                        </div>
+                    </li>
+                </ul>
+                <div class="input">
+                    <textarea ng-model="message" class="form-textarea" placeholder="Digite sua mensagem aqui..." ng-enter="sendMessage()"></textarea>
+                </div>
+            </div>
+            <div class="users">
+                <div class="search">
+                    <input type="text" ng-model="search.name" placeholder="Com qual usuário deseja conversar?">
+                </div>
+                <ul class="people">
+                    <li class="person">
+                        <div class="image">
+                            <img src="public/images/user.png" alt="Usuário" title="Usuário">
+                        </div>
+                        <div class="text">
+                            <p class="name">Thais Martins</p>
+                            <p class="group">Administrador</p>
+                            <small> a 45min</small>
+                        </div>
+                        <div class="delete">
                             <i class="ss-icon ss-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>1</td>
-                    <td><a ui-sref="/">Home</a></td>
-                    <td><a ui-sref="/">Lorem ipsum....</a></td>
-                    <td>
-                        <button class="btn btn-secondary-fill btn-xsmall btn-circle">
-                            <i class="ss-icon ss-compose"></i>
-                        </button>
-                        <button class="btn btn-secondary-fill btn-xsmall btn-circle">
+                            <span>excluir conversa</span>
+                        </div>
+                    </li>
+                    <li class="person">
+                        <div class="image">
+                            <img src="public/images/user.png" alt="Usuário" title="Usuário">
+                        </div>
+                        <div class="text">
+                            <p class="name">Thais Martins</p>
+                            <p class="group">Administrador</p>
+                            <small><i class="fa fa-clock-o"></i> a 45min</small>
+                        </div>
+                        <div class="delete">
                             <i class="ss-icon ss-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox"></td>
-                    <td>1</td>
-                    <td><a ui-sref="/">Home</a></td>
-                    <td><a ui-sref="/">Lorem ipsum....</a></td>
-                    <td>
-                        <button class="btn btn-secondary-fill btn-xsmall btn-circle">
-                            <i class="ss-icon ss-compose"></i>
-                        </button>
-                        <button class="btn btn-secondary-fill btn-xsmall btn-circle">
-                            <i class="ss-icon ss-trash"></i>
-                        </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                            <span>excluir conversa</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 

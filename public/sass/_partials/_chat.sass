@@ -1,55 +1,35 @@
 .chat
-  @include border-radius(15px)
-  padding: 20px 0
+  @include border-radius(10px)
+  width: 100%
+  height: 500px
+  overflow: hidden
+  position: relative
   background:
     color: $color-gray
+  border: 1px solid $color-gray
+  padding:
+    bottom: 120px
 
-  .talks
-    background:
-      color: transparent
+  .conversation
+    float: left
+    position: relative
+    width: 70%
+    height: 500px
 
-    .talk
+    .title
+      width: 100%
+      overflow: hidden
       position: relative
-      padding: 15px
-
-      &.other
-        .image
-          left: 0
-
-        .text
-          margin:
-            left:  110px
-          &:after
-            border-width: 7px 16px 7px 0
-            left: -15px
-
-          &:before
-            border-width: 8px 17px 8px 0
-            left: -17px
-
-      &.myself
-        .image
-          right: 0
-
-        .text
-          margin:
-            right:  110px
-
-          &:after
-            border-width: 7px 0 7px 16px
-            right: -15px
-
-          &:before
-            border-width: 8px 0 8px 17px
-            right: -17px
-
+      padding: 20px 0
+      background:
+        color: $color-soft
 
       .image
         @include border-radius(50%)
         position: absolute
-        width: 80px
-        height: 80px
-        margin: auto 25px
+        width: 70px
+        height: 70px
+        margin: auto 0
         top: 0
         bottom: 0
         overflow: hidden
@@ -59,42 +39,307 @@
           width: 100%
           min-height: 100%
 
-      .text
-        @include border-radius(10px)
-        padding: 20px
-        position: relative
-        min-height: 80px
+      .name
+        margin: 5px 10px
+        padding:
+          left: 70px
+        font:
+          weight: 800
+          size: 1.4em
+
+      .group
+        color: lighten($color-dark, 30%)
+        margin: 5px 10px
+        padding:
+          left: 70px
+        font:
+          weight: 600
+          size: .9em
+
+      .status
+        color: lighten($color-dark, 30%)
+        margin: 5px 10px
+        padding:
+          left: 70px
+        text-transform: lowercase
+        font:
+          size: .8em
+
+        .online,
+        .offline
+          @include border-radius(50%)
+          display: inline-block
+          margin: 0 3px
+          width: 7px
+          height: 7px
+          background: greenyellow
+
+        .offline
+          background: red
+
+      .search
+        width: 100%
+        float: right
+        margin:
+          right: 50px
+
+        &.active
+          input
+            width: 100%
+
+        &.not-active
+          input
+            padding:
+              right: 0
+              left: 0
+            width: 0
+
+        input
+          @include transition(all .4s)
+          float: right
+          width: 100%
+          padding: 7px 20px
+          border:
+            bottom: 1px solid $color-gray-dark
+            top: none
+            left: none
+            right: none
+
+      .btn
+        position: absolute
+        right: 10px
+        top: 0
+        margin: 0
+
+    .input
+      position: absolute
+      bottom: 20px
+      width: 95%
+      margin: auto
+      left: 0
+      right: 0
+
+      textarea
+        @include border-radius(15px)
+        height: 100px
+        padding: 15px 20px
+        width: 100%
         background:
-          color: $color-gray-soft
-        border: $color-gray-dark solid 1px
+          color: $color-soft
+        border: 1px solid $color-gray-dark
+        color: $color-dark
+        resize: none
+        margin:
+          top: 20px
         font:
           size: 1em
 
+    .talks
+      width: 95%
+      margin: auto
+      background:
+        color: transparent
+
+      .talk
+        position: relative
+        margin: 15px 10px
+        color: lighten($color-dark, 10%)
+
+        &.other
+          .image
+            left: 0
+
+          .text
+            background:
+              color: $color-gray-soft
+            border: 1px solid $color-gray-dark
+            margin:
+              right:  110px
+              left: 10px
+
+            &:after
+              border-color: transparent $color-gray-soft
+              border-width: 7px 16px 7px 0
+              left: -15px
+
+            &:before
+              border-color: transparent $color-gray-dark
+              border-width: 8px 17px 8px 0
+              left: -17px
+
+        &.myself
+          .image
+            right: 0
+
+          .text
+            background:
+              color: $color-blue-soft
+            border: 1px solid $color-gray-dark
+            margin:
+              left:  110px
+              right: 10px
+
+            &:after
+              border-color: transparent $color-blue-soft
+              border-width: 7px 0 7px 16px
+              right: -15px
+
+            &:before
+              border-color: transparent $color-gray-dark
+              border-width: 8px 0 8px 17px
+              right: -17px
+
+        .text
+          @include border-radius(10px)
+          padding: 20px
+          position: relative
+          min-height: 80px
+          font:
+            size: 1em
+
+          small
+            position: absolute
+            font:
+              size: .8em
+            color: lighten($color-dark, 40%)
+            bottom: 10px
+            right: 10px
+
+          &:after
+            content: ''
+            position: absolute
+            border-style: solid
+            display: block
+            width: 0
+            z-index: 1
+            top: 35px
+
+          &:before
+            content: ''
+            position: absolute
+            border-style: solid
+            display: block
+            width: 0
+            z-index: 0
+            top: 34px
+
+  .users
+    position: relative
+    float: left
+    width: 30%
+    height: 500px
+    background:
+      color: $color-secondary
+
+    .search
+      width: 100%
+
+      input
+        background:
+          color: $color-gray
+        width: 100%
+        padding: 20px
+        border: none
+
+    .person
+      @include transition(background .2s)
+      position: relative
+      color: $color-soft
+      padding: 15px
+      cursor: pointer
+      border:
+        bottom: 1px solid lighten($color-secondary, 5%)
+
+      &:hover,
+      &.active
+        background:
+          color: #CED3D3
+        color: $color-secondary-soft
+
+      &:hover
+        .text
+          padding:
+            right: 80px
+
+        .delete
+          width: 80px
+
+          i,
+          span
+            opacity: 1
+
+      .text
+        @include transition(all .4s)
+        height: 100%
+        overflow: hidden
+        padding:
+          left: 70px
+
+        .name
+          margin: 5px 0
+          font:
+            weight: 600
+
+        .group
+          margin: 5px 0
+          font:
+            weight: 600
+            size: .8em
+
         small
-          position: absolute
+          float: right
           font:
             size: .8em
-            weight: 800
-          color: #99A1A4
-          bottom: 10px
-          right: 10px
 
-        &:after
-          content: ''
-          position: absolute
-          border-style: solid
-          border-color: transparent $color-gray-soft
-          display: block
-          width: 0
-          z-index: 1
-          top: 35px
+      .delete
+        @include transition(all .4s)
+        position: absolute
+        width: 0
+        background:
+          color: $color-blue
+        height: 100%
+        right: 0
+        top: 0
+        color: $color-soft
 
-        &:before
-          content: ''
-          position: absolute
-          border-style: solid
-          border-color: transparent $color-gray-dark
+        &:hover
+          background:
+            color: $color-blue-dark
+
+        i,
+        span
+          @include transition(all .2s .3s)
+
+        i
+          opacity: 0
           display: block
-          width: 0
-          z-index: 0
-          top: 34px
+          font:
+            size: 1.8em
+          text-align: center
+          padding:
+            top: 20px
+
+        span
+          opacity: 0
+          width: 100%
+          text-align: center
+          display: block
+          padding: 0 20px
+          font:
+            weight: 600
+            size: .8em
+
+      .image
+        @include border-radius(50%)
+        position: absolute
+        width: 50px
+        height: 50px
+        margin: auto
+        top: 0
+        bottom: 0
+        overflow: hidden
+        display: block
+
+        img
+          width: 100%
+          min-height: 100%

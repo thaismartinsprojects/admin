@@ -20,11 +20,17 @@
   &.btn-secondary-fill
     @include create-button-fill($color-secondary, $color-soft)
 
+  &.btn-gray-fill
+    @include create-button-fill($color-gray-dark, $color-dark)
+
   &.btn-small
     width: 40px
 
     &.btn-circle
       height: 40px
+
+      i
+        top: 10px
 
   &.btn-xsmall
     width: 30px

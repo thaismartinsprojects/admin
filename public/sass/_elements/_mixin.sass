@@ -1,12 +1,12 @@
-@mixin box-shadow($top, $left, $spreat, $blur, $color, $inset: false)
+@mixin box-shadow($value, $inset: false)
   @if $inset
-    -webkit-box-shadow: inset $top $left $spreat $blur $color
-    -moz-box-shadow: inset $top $left $spreat $blur $color
-    box-shadow: inset $top $left $spreat $blur $color
+    -webkit-box-shadow: inset $value
+    -moz-box-shadow: inset $value
+    box-shadow: inset $value
   @else
-    -webkit-box-shadow: $top $left $spreat $blur $color
-    -moz-box-shadow: $top $left $spreat $blur $color
-    box-shadow: $top $left $spreat $blur $color
+    -webkit-box-shadow: $value
+    -moz-box-shadow: $value
+    box-shadow: $value
 
 @mixin border-radius($radius: 0.5em)
   -webkit-border-radius: $radius
@@ -116,7 +116,7 @@
 
   &::before
     @include border-radius(30px)
-    @include box-shadow(0, 0, 0, 135px, $color, true)
+    @include box-shadow(0 0 0 135px $color, true)
     @include scale3d(0.9, 0.9, 1)
     @include transition(box-shadow .2s, transform .2s)
     content: ''
@@ -137,7 +137,7 @@
 
     &::before
       @include scale3d(1, 1, 1)
-      @include box-shadow(0, 0, 0, 1px, $color, true)
+      @include box-shadow(0 0 0 1px $color, true)
       @include transition(box-shadow .15s, transform .2s)
 
 @mixin animation($animate)
