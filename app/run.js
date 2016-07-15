@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('adminThaisMartins')
-.run(['$rootScope', '$state', 'amMoment', 'MenuService', 'UserService', 'ChatService', function($rootScope, $state, amMoment, MenuService, UserService, ChatService) {
+.run(['$rootScope', '$state', 'amMoment', 'URI', 'MenuService', 'UserService', 'ChatService', function($rootScope, $state, amMoment, URI, MenuService, UserService, ChatService) {
 
     amMoment.changeLocale('pt-br');
 
@@ -44,6 +44,17 @@ angular.module('adminThaisMartins')
                     $rootScope.users = response.data.filter(function(user) {
                         return (user._id != $rootScope.code);
                     });
+                });
+
+            UserService.get()
+                .then(function(response) {
+                    $rootScope.user = response.data;
+                    if(!$rootScope.user.photo)
+                        $rootScope.user.thumbnail = 'public/images/user.png';
+                    else
+                        $rootScope.user.thumbnail = URI.API + '/files/users/' + $rootScope.user.photo;
+                }, function(response) {
+                    $rootScope.doLogout();
                 });
         }
     });

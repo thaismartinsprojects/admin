@@ -1,11 +1,11 @@
 <aside id="menu" class="col-xs-4" ng-class="{'mobile': activeMenu}">
     <div class="user" ng-click="goToUser()">
         <div class="image">
-            <img src="public/images/user.png" alt="Usuário" title="Usuário">
+            <img src="{{user.thumbnail}}" alt="{{user.name}}" title="{{user.name}}">
         </div>
         <div class="ref">
-            <p class="name">Thais Martins</p>
-            <p class="category">administrador</p>
+            <p class="name">{{user.name}}</p>
+            <p class="category">{{user.group.title}}</p>
             <p class="status"> <span class="online"></span>Online</p>
         </div>
     </div>

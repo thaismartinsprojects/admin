@@ -4,22 +4,10 @@ angular.module('adminThaisMartins')
 .controller('UserController', ['$scope', '$rootScope', 'URI', 'ActMessagesService', 'UserService', function ($scope, $rootScope, URI, ActMessagesService, UserService) {
 
     $scope.visiblePass = false;
-    $scope.user = {};
 
     $scope.showPass = function() {
         $scope.visiblePass = true;
     };
-
-    UserService.get()
-        .then(function(response) {
-            $scope.user = response.data;
-            if(!$scope.user.photo)
-                $scope.user.thumbnail = 'public/images/user.png';
-            else
-                $scope.user.thumbnail = URI.API + '/files/users/' + $scope.user.photo;
-        }, function(response) {
-            $rootScope.doLogout();
-        });
 
     $scope.save = function() {
 
