@@ -38,7 +38,7 @@ angular.module('adminThaisMartins')
     $scope.scrollChat = function() {
         setTimeout(function() {
             var box = document.getElementById('talks');
-            if(box) $('#talks-box').animate({scrollTop: box.scrollHeight}, 100);
+            if(box) $('#talks-box').animate({scrollTop: box.scrollHeight}, 300);
         }, 300);
     };
 
@@ -57,4 +57,11 @@ angular.module('adminThaisMartins')
             if(user._id == userId) user.hasMessage = [];
         });
     };
+
+    ChatService.on('userconnected', function(message) {
+        angular.forEach($scope.users, function(user) {
+            user.online = (message.online.indexOf(user._id) != -1);
+        });
+        $scope.$apply();
+    });
 }]);

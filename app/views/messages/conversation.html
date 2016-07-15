@@ -6,7 +6,8 @@
             </div>
             <p class="name">{{$parent.current.user.name}}</p>
             <p class="group">{{$parent.current.user.group.title}}</p>
-            <p class="status"><span class="online"></span> online</p>
+            <p class="status" ng-if="$parent.current.user.online"><span class="online"></span> online</p>
+            <p class="status" ng-if="!$parent.current.user.online"><span class="offline"></span> offline</p>
         </div>
         <div class="col-xs-6">
             <button class="btn btn-primary-fill btn-circle btn-small pull-right" ng-click="showSearch()">

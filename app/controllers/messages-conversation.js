@@ -13,7 +13,8 @@ angular.module('adminThaisMartins')
         var message = {
             to: $scope.$parent.current.user._id,
             from: $scope.$parent.code,
-            message: $scope.text
+            message: $scope.text,
+            created: new Date
         };
 
         ChatService.emit('message', message);
