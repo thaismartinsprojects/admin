@@ -3,7 +3,7 @@
         <input type="text" ng-model="search.name" placeholder="Com qual usuário deseja conversar?">
     </div>
     <ul class="people">
-        <li ng-repeat="user in users | filter:{name: search.name}" class="person" ng-click="showConversation(user._id)">
+        <li ng-repeat="user in $parent.users | filter:{name: search.name}" class="person" ng-click="showConversation(user._id)">
             <div class="image" ng-class="{'online': user.online, 'offline': !user.online}">
                 <img src="public/images/user.png" alt="Usuário" title="Usuário">
             </div>

@@ -4,7 +4,6 @@ angular.module('adminThaisMartins')
 .factory('UserService', ['URI', '$http', function (URI, $http) {
 
     var apiUrl = URI.API + '/accounts';
-    $http.defaults.headers.common["x-access-token"] = localStorage.getItem('code');
 
     return {
         isLogged: function() {
@@ -23,6 +22,7 @@ angular.module('adminThaisMartins')
             return localStorage.getItem('code');
         },
         getAll: function() {
+            $http.defaults.headers.common["x-access-token"] = this.getToken();
             return $http.get(apiUrl);
         }
     };
