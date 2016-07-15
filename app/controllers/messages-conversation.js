@@ -8,6 +8,12 @@ angular.module('adminThaisMartins')
             && (userId == messageFrom);
     };
 
+    $scope.visibleSearch = false;
+    $scope.showSearch = function() {
+        $scope.search.message = '';
+        $scope.visibleSearch = !$scope.visibleSearch;
+    };
+
     $scope.sendMessage = function() {
         if(!$scope.text) return false;
         var message = {
