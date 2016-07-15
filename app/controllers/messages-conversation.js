@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('adminThaisMartins')
-.controller('MessagesConversationController', ['$scope', 'MessageService', function ($scope, MessageService) {
+.controller('MessagesConversationController', ['$scope', 'MessageService', 'ChatService', function ($scope, MessageService, ChatService) {
 
 
     $scope.sendMessage = function() {
@@ -13,13 +13,20 @@ angular.module('adminThaisMartins')
             from: $scope.$parent.code,
             message: $scope.text
         };
-        
-        MessageService.create(message)
-            .then(function(response) {
-                $scope.current.messages.push(message);
-            });
+
+        ChatService.emit('message', message);
+        $scope.$parent.current.messages.push(message);
 
         $scope.text = '';
         $scope.$parent.scrollChat();
     };
+
+    ChatService.on('message', function(message) {
+        
+        $scope.$parent.messages[message.from].messages.push(message);
+        if($scope.$parent.current && $scope.$parent.current.user._id == message.from)
+            $scope.$parent.scrollChat();
+
+        $scope.$apply();
+    });
 }]);

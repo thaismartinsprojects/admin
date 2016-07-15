@@ -16,7 +16,8 @@ var jsFiles = [
     'bower_components/angular-input-masks/angular-input-masks-standalone.min.js',
     'bower_components/moment/min/moment-with-locales.min.js',
     'bower_components/moment/locale/pt-br.js',
-    'bower_components/angular-moment/angular-moment.min.js'
+    'bower_components/angular-moment/angular-moment.min.js',
+    'node_modules/socket.io-client/socket.io.js'
 ];
 
 var cssFiles = [

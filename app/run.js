@@ -34,5 +34,6 @@ angular.module('adminThaisMartins')
     });
 }])
 .constant('URI', {
-    'API': 'http://localhost:3000/api'
+    'API': 'http://localhost:3000/api',
+    'CHAT': 'http://localhost:9000'
 });

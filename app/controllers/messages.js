@@ -25,8 +25,9 @@ angular.module('adminThaisMartins')
             angular.forEach($scope.users, function(user) {
                 var userMessages = $filter('filter')(response.data, {'to': $scope.code, 'from': user._id});
                 var myMessages = $filter('filter')(response.data, {'to': user._id, 'from': $scope.code});
+                var allMessages = myMessages.concat(userMessages);
                 $scope.messages[user._id] = {
-                    messages: myMessages.concat(userMessages),
+                    messages: $filter('orderBy')(allMessages, 'created'),
                     user: user
                 };
             });
