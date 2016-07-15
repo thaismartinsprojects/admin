@@ -1,18 +1,13 @@
 <div id="login">
     <div class="box box-small">
-        <div class="alert-error" role="alert" ng-if="error">
-            <div class="label">
-                <i class="ss-icon ss-alert"></i>
-            </div>
-           <span><strong>ERRO:</strong> {{error}}</span>
-        </div>
+        <div ui-view="error"></div>
         <h1 >painel<strong>admin</strong> <span class="dot"></span></h1>
         <h2>Seja bem vindo!</h2>
         <p>Faça login para acessar sua conta.</p>
         <form name="loginForm" class="form form-login">
-            <div class="form-group" ng-class="{'active': login.user}">
-                <label for="user">Usuário</label>
-                <input type="text" ng-model="login.user" id="user">
+            <div class="form-group" ng-class="{'active': login.username}">
+                <label for="username">Usuário</label>
+                <input type="text" ng-model="login.username" id="username">
             </div>
             <div class="form-group" ng-class="{'active': login.password}">
                 <label for="pass">Senha</label>

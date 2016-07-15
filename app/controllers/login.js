@@ -6,7 +6,7 @@ angular.module('adminThaisMartins')
 
         $scope.error = false;
         if(!$scope.login
-            || ValidateService.isEmpty($scope.login.user)
+            || ValidateService.isEmpty($scope.login.username)
                 || ValidateService.isEmpty($scope.login.password)) {
             $scope.error = 'Por favor, preencha todos os dados.';
             return false
