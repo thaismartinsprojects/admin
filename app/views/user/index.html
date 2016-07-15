@@ -21,6 +21,15 @@
                 <label for="email">Email</label>
                 <input type="text" class="form-control" ng-model="user.email" id="email">
             </div>
+            <div class="form-group col-xs-12">
+                <div class="image">
+                    <img src="{{user.thumbnail}}" alt="{{user.name}}" title="{{user.name}}">
+                </div>
+                <div class="fields">
+                    <label for="photo">Foto</label>
+                    <file ng-model="user.photo" id="logo" classes="form-control" type="image/x-png, image/jpeg"></file>
+                </div>
+            </div>
             <div class="fake-form-group col-xs-12" ng-if="!visiblePass">
                 <p class="label">Senha</p>
                 <p class="input">**********</p>

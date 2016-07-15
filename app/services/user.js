@@ -32,6 +32,16 @@ angular.module('adminThaisMartins')
         update: function(user) {
             $http.defaults.headers.common["x-access-token"] = this.getToken();
             return $http.put(apiUrl + '/' + this.getCode(), user);
+        },
+        upload: function(user) {
+            $http.defaults.headers.common["x-access-token"] = this.getToken();
+            return $http.put(apiUrl + '/' + this.getCode(), user, {
+                withCredentials: false,
+                headers: {
+                    'Content-Type': undefined
+                },
+                transformRequest: angular.identity
+            });
         }
     };
 }]);
