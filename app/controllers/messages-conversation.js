@@ -9,9 +9,7 @@ angular.module('adminThaisMartins')
     };
 
     $scope.sendMessage = function() {
-
         if(!$scope.text) return false;
-
         var message = {
             to: $scope.$parent.current.user._id,
             from: $scope.$parent.code,
@@ -26,14 +24,10 @@ angular.module('adminThaisMartins')
     };
 
     ChatService.on('message', function(message) {
-
         angular.forEach($scope.$parent.users, function(user) {
-            if(isUnvisualized(user._id, message._id))
-                user.hasMessage.push(message);
-            else
-                ChatService.emit('visualized', message);
+            if(isUnvisualized(user._id, message._id)) user.hasMessage.push(message);
+            else ChatService.emit('visualized', message);
         });
-
         $scope.$parent.messages[message.from].messages.push(message);
         $scope.$parent.scrollChat();
         $scope.$apply();
