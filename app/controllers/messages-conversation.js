@@ -3,6 +3,10 @@
 angular.module('adminThaisMartins')
 .controller('MessagesConversationController', ['$scope', 'MessageService', 'ChatService', function ($scope, MessageService, ChatService) {
 
+    var isUnvisualized = function(userId, messageFrom) {
+        return (typeof $scope.current.user == 'undefined' || $scope.current.user._id != messageFrom)
+            && (userId == messageFrom);
+    };
 
     $scope.sendMessage = function() {
 
@@ -22,11 +26,16 @@ angular.module('adminThaisMartins')
     };
 
     ChatService.on('message', function(message) {
-        
-        $scope.$parent.messages[message.from].messages.push(message);
-        if($scope.$parent.current && $scope.$parent.current.user._id == message.from)
-            $scope.$parent.scrollChat();
 
+        angular.forEach($scope.$parent.users, function(user) {
+            if(isUnvisualized(user._id, message._id))
+                user.hasMessage.push(message);
+            else
+                ChatService.emit('visualized', message);
+        });
+
+        $scope.$parent.messages[message.from].messages.push(message);
+        $scope.$parent.scrollChat();
         $scope.$apply();
     });
 }]);
