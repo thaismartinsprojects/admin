@@ -24,6 +24,9 @@ angular.module('adminThaisMartins', [
                 'main@': {
                     templateUrl: 'app/views/login/index.html',
                     controller: 'LoginController'
+                },
+                'error@login': {
+                    templateUrl: 'app/views/partials/error.html'
                 }
             }
         })
@@ -185,6 +188,9 @@ angular.module('adminThaisMartins', [
             parent: 'root',
             requiredLogin: true,
             views: {
+                'error@user': {
+                    templateUrl: 'app/views/partials/error.html'
+                },
                 'main@': {
                     templateUrl: 'app/views/user/index.html',
                     controller: 'UserController'

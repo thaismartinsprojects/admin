@@ -6,8 +6,12 @@ angular.module('adminThaisMartins')
     amMoment.changeLocale('pt-br');
 
     $rootScope.activeMenu = true;
+    $rootScope.error = false;
+
     $rootScope.menu = MenuService.getItems();
     $rootScope.code = UserService.getCode();
+
+    $rootScope.users = false;
 
     $rootScope.toogleMenu = function() {
         $rootScope.activeMenu = !$rootScope.activeMenu;
@@ -28,19 +32,22 @@ angular.module('adminThaisMartins')
         $rootScope.showMessages = !$rootScope.showMessages;
     };
 
-    $rootScope.$on('$stateChangeSuccess', function(){
+    $rootScope.$on('$stateChangeSuccess', function() {
+
         $rootScope.showMessages = false;
         if($state.current.requiredLogin && !UserService.isLogged())
             $state.go('login')
+
+        if($state.current.name != 'login' && !$rootScope.users) {
+            UserService.getAll()
+                .then(function(response) {
+                    $rootScope.users = response.data.filter(function(user) {
+                        return (user._id != $rootScope.code);
+                    });
+                });
+        }
     });
-
-    UserService.getAll()
-        .then(function(response) {
-            $rootScope.users = response.data.filter(function(user) {
-                return (user._id != $rootScope.code);
-            });
-        });
-
+    
     ChatService.on('userconnected', function(message) {
         angular.forEach($rootScope.users, function(user) {
             user.online = (message.online.indexOf(user._id) != -1);

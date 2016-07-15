@@ -24,6 +24,14 @@ angular.module('adminThaisMartins')
         getAll: function() {
             $http.defaults.headers.common["x-access-token"] = this.getToken();
             return $http.get(apiUrl);
+        },
+        get: function() {
+            $http.defaults.headers.common["x-access-token"] = this.getToken();
+            return $http.get(apiUrl + '/' + this.getCode() );
+        },
+        update: function(user) {
+            $http.defaults.headers.common["x-access-token"] = this.getToken();
+            return $http.put(apiUrl + '/' + this.getCode(), user);
         }
     };
 }]);
